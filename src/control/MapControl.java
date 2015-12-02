@@ -24,6 +24,7 @@ public class MapControl {
     
         p.setTimeRemaining(newTimeRemaining);
     } 
+     
     
     public boolean movePlayer(Player p, MainMap m) throws MapException{
         

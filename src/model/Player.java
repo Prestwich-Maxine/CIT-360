@@ -22,7 +22,6 @@ public class Player implements Serializable{
     private List<Deliveries> deliveries;
     public String itemsCurrent [];
     public int timeRemaining;
-    private int numberOfPointsEarned;
     public int currentSurvivalPoints;
     private int remainingSurvivalPoints;
     private Location[][] location; 
@@ -106,16 +105,7 @@ public class Player implements Serializable{
         this.timeRemaining = timeRemaining;
     }
 
-    public int getNumberOfPointsEarned() {
-        return numberOfPointsEarned;
-    }
-
-    public void setNumberOfPointsEarned(int numberOfPointsEarned) {
-        this.numberOfPointsEarned = numberOfPointsEarned;
-    }
-    
-    
-    
+  
     
     
     
