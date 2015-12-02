@@ -12,11 +12,15 @@
 
 package view;
 
+import java.util.Scanner;
+
 /**
  *
  * @author Maxine
  */
 public class StoreMegaAislesView extends View {
+
+    private double number;
     
     public StoreMegaAislesView() {
         super ("Store aisles:\n"
@@ -31,8 +35,33 @@ public class StoreMegaAislesView extends View {
                 + "X - Game Menu");
     }
     
-    
-    @Override
+    public int getQuantity (){
+        int number;
+        int total = 0;
+        int quantity;
+        
+        System.out.println("Please enter a quantity: ");
+        
+        Scanner in = new Scanner(System.in);
+        number = in.nextInt();
+        
+        while (number <1 && number > 5) {
+            try {
+            return -1;
+            } catch (NumberFormatException nf) {
+                System.out.println("Please enter a valid number between 1 and 5."
+                        + " Please try again.");
+            }
+        }
+        for (int n = 1; n <= 5; n++)
+            total += n++;
+        
+        quantity = number * total;
+        
+        return quantity;
+    }
+       
+   @Override
     public boolean doAction(char input) {
         
         switch(input) {
@@ -67,6 +96,8 @@ public class StoreMegaAislesView extends View {
             }
         return true;
     }
+    
+    
     private void enterProteinAisle() {
         System.out.println("NOT YET IMPLEMENTED");
     }
