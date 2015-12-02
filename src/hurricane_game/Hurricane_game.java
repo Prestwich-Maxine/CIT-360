@@ -10,14 +10,18 @@ import view.MainMenuView;
 import view.WelcomeView;
 import model.StoreAislesCamping;
 import model.StoreCamping;
+import view.StoreMegaAislesView;
+import control.GameControl;
 /**
  * @author maloriegomm
  */
 public class Hurricane_game {
 
+    private static GameControl createNewGame = null;
+    private static Player player = null;
+    
     public static void main(String[] args) {
-        
-//        
+               
 //        Player player = new Player();
 //        
 //        WelcomeView welcomeView = new WelcomeView();
@@ -28,7 +32,13 @@ public class Hurricane_game {
 //        welcomeView.displayPlayerNameBanner(player);
 //        
          MainMenuView mainView = new MainMenuView();
+         try {
          mainView.display();
+         } catch (Throwable te) {
+             System.out.println(te.getMessage());
+             te.printStackTrace();
+             mainView.display();
+         }
         
 //        char in = mainView.getInput();
 //        
