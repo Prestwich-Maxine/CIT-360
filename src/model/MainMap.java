@@ -12,8 +12,8 @@ import java.io.Serializable;
  */
 public class MainMap implements Serializable {
     
-    private int NUM_ROWS = 3;
-    private int NUM_COLS = 4;
+    private int NUM_ROWS = 2;
+    private int NUM_COLS = 2;
     private Location[][] locations;
     private String names;
 

@@ -15,33 +15,59 @@ import model.Player;
  * @author maloriegomm
  */
 public class MapControl {
-
-    private int row;
-    private int col;
-    private Location[][] locations;
     
-    public static MainMap createMap(Player player) {
+    public boolean movePlayer(Player p, MainMap m) throws MapException{
         
-        MainMap map = new MainMap(3, 4);
-        
-        map.initialize();
-        
-        player.setLocation(map.getLocations()[1][1]);
-        
-        return map;
-        
-        Location location = createLocation();
-        
-        //Scene[] scenes = createScenes();
-        GameControl gameControl = new GameControl();
-        gameControl.assignNamesToLocations(map);
-        return map;
+       if(p.getLocation() == null){
+            throw new MapException("Player cannot move off map");
+        }
+       
+       Location newLocation = m.getLocations() [p.getLocation().getRows()][p.getLocation().getCol()];
+       
+       
+       p.setLocation(newLocation);
+        return true;
     }
-
     
-    private static Location createLocation() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    
+    
+    
+    
+    
+    
+    
+
+//    private int row;
+//    private int col;
+//    private Location[][] locations;
+//    
+//    public static MainMap createMap(Player player) {
+//        
+//        MainMap map = new MainMap(3, 4);
+//        
+//        map.initialize();
+//        
+//        player.setLocation(map.getLocations()[1][1]);
+//        
+//        return map;
+//        
+//        Location location = createLocation();
+//        
+//        //Scene[] scenes = createScenes();
+//        GameControl gameControl = new GameControl();
+//        gameControl.assignNamesToLocations(map);
+//        return map;
+//    }
+//
+//    
+//    private static Location createLocation() {
+//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+//    }
+    
+ 
+    
+    
+    
     /*public Map() {
         
     }
@@ -51,11 +77,7 @@ public class MapControl {
     }*/
     
         
-//    public void move(Location l){
-//    
-//       System.out.println(l);
-//     
-//    }
+/
 }
 
   

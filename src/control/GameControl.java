@@ -240,7 +240,7 @@ public class GameControl {
     
     }
     
-    public void retrieveGame() {
+    public void getCurrentGame() {
     
     }
     // Come back and figure out list. Need to create in items.
