@@ -29,9 +29,10 @@ public class MapControl {
     public boolean movePlayer(Player p, MainMap m) throws MapException{
         
        if(p.getLocation() == null){
-            throw new MapException("Player cannot move off map");
+            throw new MapException("Player has not been set to a location yet");
         }
        
+       // Needs some help
        Location newLocation[][] = m.getLocations() [p.getLocation().getRows()][p.getLocation().getCol()];
        
        

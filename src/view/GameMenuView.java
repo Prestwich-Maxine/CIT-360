@@ -5,6 +5,7 @@
  */
 package view;
 
+import Exception.MapException;
 import control.GameControl;
 import java.util.Scanner;
 import model.MainMap;
@@ -94,12 +95,20 @@ public class GameMenuView extends View{
         System.out.println("NOT IMPLEMENTED YET"); 
     }
 
+    
+    
     private void moveToNewLocation() {
-        System.out.println("NOT IMPLEMENTED YET");
+    
+        System.out.println("Every time you move location, 30 minutes will be duducted from your remaining time until the Hurricane.");
+        //Display map graphic
+        
+        MapView mapView = new MapView();
+        mapView.display();
     }
 
     private void deliverSupplies() {
         System.out.println("NOT IMPLEMENTED YET");
+        
     }
 
     private void viewDeliveries() {
