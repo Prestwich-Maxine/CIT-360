@@ -19,8 +19,6 @@ public class Game implements Serializable {
     private Player player;
     private MainMap map;
     private InventoryList survivalPoints;
-    public int timeRemaining;
-    private int numberOfPointsEarned;
     private Item[] gameItemList;
     private InventoryList[] itemsList;//can be an Enum or Array because it doesn't need to grow or shrink
     private InventoryList[]itemsNeeded;
@@ -60,22 +58,6 @@ public class Game implements Serializable {
 
     public void setNeededSurvivalPoints(InventoryList neededSurvivalPoints) {
         this.neededSurvivalPoints = neededSurvivalPoints;
-    }
-
-    public int getTimeRemaining() {
-        return timeRemaining;
-    }
-
-    public void setTimeRemaining(int timeRemaining) {
-        this.timeRemaining = timeRemaining;
-    }
-
-    public int getNumberOfPointsEarned() {
-        return numberOfPointsEarned;
-    }
-
-    public void setNumberOfPointsEarned(int numberOfPointsEarned) {
-        this.numberOfPointsEarned = numberOfPointsEarned;
     }
 
     public InventoryList[] getItemsList() {
@@ -162,11 +144,6 @@ public class Game implements Serializable {
 	return timeRemaining;
     }
     
-    public int calcTimeToDeduct(int timeRemaining) {
-    
-        int calcTimeToDeduct = timeRemaining - 1;
-            
-            return calcTimeToDeduct;
-        }
+   
 }
 

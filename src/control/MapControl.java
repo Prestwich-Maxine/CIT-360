@@ -16,18 +16,34 @@ import model.Player;
  */
 public class MapControl {
     
+    // a set time deduction for everytime the player moves ( - 30 minutes)
+     public void DeductTime(Player p) {
+        
+        int deduction = 30;
+        int newTimeRemaining = p.getTimeRemaining() - deduction;
+    
+        p.setTimeRemaining(newTimeRemaining);
+    } 
+    
     public boolean movePlayer(Player p, MainMap m) throws MapException{
         
        if(p.getLocation() == null){
             throw new MapException("Player cannot move off map");
         }
        
-       Location newLocation = m.getLocations() [p.getLocation().getRows()][p.getLocation().getCol()];
+       Location newLocation[][] = m.getLocations() [p.getLocation().getRows()][p.getLocation().getCol()];
        
        
        p.setLocation(newLocation);
+       if (p.getLocation() == newLocation){
+           
+           DeductTime(p);
+           
+       }
         return true;
     }
+    
+    
     
     
     

@@ -21,6 +21,8 @@ public class Player implements Serializable{
     private double money;
     private List<Deliveries> deliveries;
     public String itemsCurrent [];
+    public int timeRemaining;
+    private int numberOfPointsEarned;
     public int currentSurvivalPoints;
     private int remainingSurvivalPoints;
     private Location[][] location; 
@@ -95,6 +97,29 @@ public class Player implements Serializable{
     public void setRemainingSurvivalPoints(int remainingSurvivalPoints) {
         this.remainingSurvivalPoints = remainingSurvivalPoints;
     }
+
+    public int getTimeRemaining() {
+        return timeRemaining;
+    }
+
+    public void setTimeRemaining(int timeRemaining) {
+        this.timeRemaining = timeRemaining;
+    }
+
+    public int getNumberOfPointsEarned() {
+        return numberOfPointsEarned;
+    }
+
+    public void setNumberOfPointsEarned(int numberOfPointsEarned) {
+        this.numberOfPointsEarned = numberOfPointsEarned;
+    }
+    
+    
+    
+    
+    
+    
+    
 
     @Override
     public int hashCode() {
