@@ -40,11 +40,11 @@ public class GameControl {
         welcomeView.displayPlayerNameBanner(player);
         game.setPlayer(player);// save player in game
    
-        MainMap map = MapControl.createMap();
-        game.setMap(map);
+        //MainMap map = MapControl.createMap();
+        //game.setMap(map);
         }
 
-    public static void getLoadGame(String filePath) {
+    /*public static void getLoadGame(String filePath) {
         throws GameControlException {
         
         Game game = null;
@@ -78,7 +78,7 @@ public class GameControl {
         }
     }  
     
-    }
+    }*/
     
     /*
     Playing around with createItemList method. I think I want to put the items 
