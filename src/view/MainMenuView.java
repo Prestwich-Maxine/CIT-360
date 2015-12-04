@@ -38,15 +38,15 @@ public class MainMenuView extends View {
             case 'N' :
                 startNewGame();
                 break;
-            case 'L' :
+            /*case 'L' :
                 loadGame();
-                break;
+                break;*/
             case 'H' :
                 showHelpMenu();
                 break;
-            case 'S':
+            /*case 'S':
                 saveGame();
-                break;
+                break;*/
             case 'X' :
                 return false;
             default:
@@ -69,7 +69,7 @@ public class MainMenuView extends View {
       
     }
 
-    private void loadGame() {
+    /*private void loadGame() {
       // prompt for and get the name of the file to save the gamein
       System.out.println("\n\nEnter the file path for where the game"
                           + " is to be saved.");
@@ -84,14 +84,14 @@ public class MainMenuView extends View {
       // display the Game Menu
       GameMenuView gameMenu = new GameMenuView();
       gameMenu.display();
-      }
+      }*/
 
     private void showHelpMenu() {
         HelpMenuView helpMenu = new HelpMenuView();
         helpMenu.display();
     }
 
-    private void saveGame() {
+    /*private void saveGame() {
         System.out.println("\n\nEnter the file path for file where the game "
                 + "is to be saved.");
         String filePath = this.getInput();
@@ -104,5 +104,5 @@ public class MainMenuView extends View {
         }
         
         
-    }
+    }*/
 }
