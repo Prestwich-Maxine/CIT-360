@@ -50,7 +50,8 @@ public class MainMenuView extends View {
             case 'X' :
                 return false;
             default:
-                System.out.println("Please select a valid input.");
+                ErrorView.display("MainMenuView", "*** Invalid Selection *** "
+                        + "Try Again");
                 break;
         }
         
@@ -69,9 +70,21 @@ public class MainMenuView extends View {
     }
 
     private void loadGame() {
-      System.out.println("NOT IMPLEMENTED YET");
-
-    }
+      // prompt for and get the name of the file to save the gamein
+      System.out.println("\n\nEnter the file path for where the game"
+                          + " is to be saved.");
+      String filePath = this.getInput();
+      
+      try {
+          // start a saved game
+          GameControl.getLoadGame(filePath);
+      } catch (Exception e) {
+            ErrorView.display("MainMenuView", e.getMessage());
+      }
+      // display the Game Menu
+      GameMenuView gameMenu = new GameMenuView();
+      gameMenu.display();
+      }
 
     private void showHelpMenu() {
         HelpMenuView helpMenu = new HelpMenuView();
@@ -79,6 +92,17 @@ public class MainMenuView extends View {
     }
 
     private void saveGame() {
-        System.out.println("NOT YET IMPLEMENTED");
+        System.out.println("\n\nEnter the file path for file where the game "
+                + "is to be saved.");
+        String filePath = this.getInput();
+        
+        try {
+            // save the game to the specified file
+            GameControl.saveGame(Hurricane_game.getGame(), filePath);
+        } catch (Exception e) {
+            ErrorView.display("MainMenuView", e.getMessage());
+        }
+        
+        
     }
 }
