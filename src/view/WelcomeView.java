@@ -36,12 +36,12 @@ public class WelcomeView {
     
     public String getPlayerName(){
         
-        Scanner in = new Scanner(System.in);
+        //Scanner in = new Scanner(System.in);
         String name = "";
         
         while(name.length() < 2) {
             System.out.println("Please Enter Your Name:");
-            name = in.nextLine();
+            name = keyboard.readLine();
             
             if(name.length() < 2){
                 System.out.println("Please Enter a name with at least 2 characters.");
