@@ -111,7 +111,7 @@ public class InventoryControl {
         
         int count = 0;
         
-        while(count < quantity) {
+        /*while(count < quantity) {
             Item newItem = new Item();
             newItem.setCategoryName(i.getCategoryName());
             newItem.setItemCost(i.getItemCost());
@@ -120,7 +120,7 @@ public class InventoryControl {
             
             p.getInventory().add(newItem);
             count = count + 1;
-        }
+        }*/
         
         return true;
     }
