@@ -43,7 +43,7 @@ public class StoreMegaAislesView extends View {
         System.out.println("Please enter a quantity: ");
         
         Scanner in = new Scanner(System.in);
-        number = in.nextInt();
+        number = keyboard.read();
         
         while (number <1 && number > 5) {
             try {
