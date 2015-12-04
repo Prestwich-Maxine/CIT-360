@@ -81,8 +81,8 @@ public class Game implements Serializable {
         int hash = 7;
         hash = 13 * hash + Objects.hashCode(this.player);
         hash = 13 * hash + Objects.hashCode(this.survivalPoints);
-        hash = 13 * hash + this.timeRemaining;
-        hash = 13 * hash + this.numberOfPointsEarned;
+        //hash = 13 * hash + this.timeRemaining;
+        //hash = 13 * hash + this.numberOfPointsEarned;
         hash = 13 * hash + Arrays.deepHashCode(this.itemsList);
         hash = 13 * hash + Arrays.deepHashCode(this.itemsNeeded);
         hash = 13 * hash + Objects.hashCode(this.neededSurvivalPoints);
@@ -104,12 +104,12 @@ public class Game implements Serializable {
         if (!Objects.equals(this.survivalPoints, other.survivalPoints)) {
             return false;
         }
-        if (this.timeRemaining != other.timeRemaining) {
+        /*if (this.timeRemaining != other.timeRemaining) {
             return false;
         }
         if (this.numberOfPointsEarned != other.numberOfPointsEarned) {
             return false;
-        }
+        }*/
         if (!Arrays.deepEquals(this.itemsList, other.itemsList)) {
             return false;
         }
