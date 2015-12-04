@@ -5,6 +5,7 @@
  */
 package control;
 
+import Exception.InventoryControlException;
 import model.Deliveries;
 import model.Item;
 import model.Player;
@@ -16,10 +17,12 @@ import model.Player;
 public class InventoryControl {
     
     // function for money earned
-    public Double calcAddMoneyEarned(Player p, Deliveries d){
-    
+    public Double calcAddMoneyEarned(Player p, Deliveries d)
+            throws InventoryControlException{
+            
             if (p.getMoney() < 0){
-                return -1.0;
+                throw new InventoryControlException("Your account is less than "
+                        + "0. Check the delivery center to earn money.");
             }
             
             double newMoney = p.getMoney() + d.getDELIVERY_MONEY();
@@ -30,18 +33,25 @@ public class InventoryControl {
     
     
     //function to calculate money spent
-    public double calcMoneySpent(double budget, double itemCost, String name, int quantity){
+    public double calcMoneySpent(double budget, double itemCost, String name, int quantity)
+        throws InventoryControlException {
+        
         
         if (budget <= 0 && budget < itemCost){
-            return -1;
+            throw new InventoryControlException("You do not have enough in"
+                    + "your account to purchase this item.");
         }
         if (quantity <0 || quantity > 5){
-            return -1;
+            throw new InventoryControlException("Please enter a quantity between"
+                    + "one and five.");
         }
-        
+        try {
         double totalItemCost = itemCost * quantity;
         budget = budget - totalItemCost;
-        
+        } catch (NumberFormatException nf) {
+            System.out.println("\nPlease check your quantity and budget. You may"
+                    + " have exceeded your budget. ");
+        }
         return budget;       
     }
     
