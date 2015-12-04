@@ -67,11 +67,13 @@ public class InventoryControl {
         
         //Just checking 
         System.out.println(survivalPoints);
+        //this.console.println(surivalPoints);
 
         int currentSurvivalPoints = survivalPoints;
         
         //Just checking 
         System.out.println(currentSurvivalPoints);
+        //this.console.println(currentSurvivalPoints);
         
         return currentSurvivalPoints;
     }
