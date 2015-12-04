@@ -41,7 +41,7 @@ public class WelcomeView {
         
         while(name.length() < 2) {
             System.out.println("Please Enter Your Name:");
-            name = keyboard.readLine();
+            //name = keyboard.readLine();
             
             if(name.length() < 2){
                 System.out.println("Please Enter a name with at least 2 characters.");
