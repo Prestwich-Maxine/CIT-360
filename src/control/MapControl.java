@@ -33,7 +33,7 @@ public class MapControl {
         }
        
        // Needs some help
-       Location newLocation[][] = m.getLocations() [p.getLocation().getRows()][p.getLocation().getCol()];
+       Location[][] newLocation = m.getLocations() [p.getLocation().getRows()][p.getLocation().getCol()];
        
        
        p.setLocation(newLocation);
