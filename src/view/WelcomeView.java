@@ -36,7 +36,7 @@ public class WelcomeView {
     
     public String getPlayerName(){
         
-        //Scanner in = new Scanner(System.in);
+        Scanner in = new Scanner(System.in);
         String name = "";
         
         while(name.length() < 2) {

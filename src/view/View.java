@@ -30,37 +30,88 @@ public abstract class View implements ViewInterface {
         boolean cont;
         
         do {
-        
             System.out.println(menu);
-        
-            char in = getInput();
-        
+            char in = getInput();        
             cont = doAction(in);
+            
+//            this.console.println(this.menu);
+//            char in = this.getInput();
+//            cont = this.doAction(in);
         } while (cont);
     
     }
         
     @Override
      public char getInput() {
-     
-        //Scanner in = new Scanner(System.in);
-        
+             
         String input = "";
         char rtn = 0;
+        
         try {
         while(input.length() < 1){
+            
             input = keyboard.readLine();
             
             if(input.length() < 1){
-                System.out.println("Please select an option");
+                ErrorView.display(this.getClass().getName(),
+                                    "Please select an option");
             } else {
                 rtn = input.toUpperCase().charAt(0);
             }
         }
         } catch (Exception e) {
-            System.out.println("Error reading input: " + e.getMessage());
+            ErrorView.display(this.getClass().getName(),
+                              "Error reading input: " + e.getMessage());
         }
         
         return rtn;
      }
 }
+
+
+
+
+//
+//CODE PRIOR TO LESSON 11 TEAM ASSIGNMENT PT1
+//
+//
+//@Override
+//    public void display() {
+//        boolean cont;
+//        
+//        do {
+//        
+//            System.out.println(menu);
+//        
+//            char in = getInput();
+//        
+//            cont = doAction(in);
+//        } while (cont);
+//    
+//    }
+//        
+//    @Override
+//     public char getInput() {
+//     
+//        //Scanner in = new Scanner(System.in);
+//        
+//        String input = "";
+//        char rtn = 0;
+//        try {
+//        while(input.length() < 1){
+//            input = keyboard.readLine();
+//            
+//            if(input.length() < 1){
+//                System.out.println("Please select an option");
+//            } else {
+//                rtn = input.toUpperCase().charAt(0);
+//            }
+//        }
+//        } catch (Exception e) {
+//            System.out.println("Error reading input: " + e.getMessage());
+//        }
+//        
+//        return rtn;
+//     }
+//}
+//

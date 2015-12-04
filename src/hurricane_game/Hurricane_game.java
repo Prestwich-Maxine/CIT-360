@@ -7,24 +7,20 @@ package hurricane_game;
 
 import model.Player;
 import view.MainMenuView;
-import view.WelcomeView;
-import model.StoreAislesCamping;
-import model.StoreCamping;
-import view.StoreMegaAislesView;
 import control.GameControl;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import model.Game;
+import view.WelcomeView;
 /**
  * @author maloriegomm
  */
 public class Hurricane_game {
 
-    private static GameControl createNewGame = null;
-    private static Player player = null;
+    private static final GameControl createNewGame = null;
+    private static final Player player = null;
     
     private static PrintWriter outFile = null;
     private static BufferedReader inFile = null;
@@ -32,6 +28,17 @@ public class Hurricane_game {
     private static PrintWriter logFile = null;
     
     public static void main(String[] args) {
+                
+//            WelcomeView welcomeView = new WelcomeView();
+//            welcomeView.displayBanner();
+//
+//            player.setName(welcomeView.getPlayerName());
+//
+//            welcomeView.displayPlayerNameBanner(player);
+         
+             MainMenuView mainView = new MainMenuView();
+             mainView.display(); 
+    
         
         try {
             
@@ -41,37 +48,16 @@ public class Hurricane_game {
             
             Hurricane_game.outFile = new PrintWriter(System.out, true);
         
-        try {
             // open log file
             String filePath = "log.txt";
             Hurricane_game.logFile = new PrintWriter(filePath);
             
-        } catch (Exception e) {
+        } catch (Throwable e) {
             System.out.println("Exception: " + e.toString() +
                     "\nCause: " + e.getCause() +
                     "\nMessage: " + e.getMessage());
         }
-               
-//        Player player = new Player();
-//        
-//        WelcomeView welcomeView = new WelcomeView();
-//        welcomeView.displayBanner();
-//        
-//        player.setName(welcomeView.getPlayerName());
-//        
-//        welcomeView.displayPlayerNameBanner(player);
-//        
-         MainMenuView mainView = new MainMenuView();
-         mainView.display();
-         return;
-         
-        } catch (Throwable e) {
-             System.out.println("Exception: " + e.toString() +
-                     "\nCause: " + e.getCause() +
-                     "\nMessage: " + e.getMessage());
-             e.printStackTrace();;
-        }
-        
+                   
         finally {
             try {
                 if (Hurricane_game.inFile != null)
@@ -87,12 +73,6 @@ public class Hurricane_game {
                 return;
             }
             
-        }
-         
-//        char in = mainView.getInput();
-//        
-//        System.out.println("YOU ENTERED " + in);
-
         }
     
     public static PrintWriter getOutFile() {
@@ -118,9 +98,17 @@ public class Hurricane_game {
     public static void setLogFile(PrintWriter logFile) {
         Hurricane_game.logFile = logFile;
     }
+
+    public static Game getCurrentGame() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public static void setCurrentGame(Game game) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }
-    
+
 //    /**
 //     * @param args the command line arguments
 //     */
@@ -137,7 +125,6 @@ public class Hurricane_game {
 //        mainMap.initialize();
 //        
 //        System.out.println(mainMap.toString());
-//      
-//    }
+
     
 

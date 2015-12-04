@@ -5,21 +5,18 @@
  */
 package control;
 
+import Exception.GameControlException;
 import hurricane_game.Hurricane_game;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import model.InventoryList;
 import java.io.IOException;
 import java.io.ObjectInputStream;
-import java.util.Scanner;
 import model.Game;
-import model.InventoryList;
-import model.Item;
-import model.Items;
 import model.Location;
 import model.Location.LocationName;
 import model.MainMap;
 import model.Player;
-import view.MainMenuView;
 import view.WelcomeView;
 
 /**
@@ -44,17 +41,19 @@ public class GameControl {
         //game.setMap(map);
         }
 
-    /*public static void getLoadGame(String filePath) {
-        throws GameControlException {
-        
+    
+    public static void getSavedGame(String filePath)
+                        throws GameControlException {
         Game game = null;
+        Player player = null;
         
-        try (FileInputStream fips = new FileInputStream(filePath)) {
+        try( FileInputStream fips = new FileInputStream(filePath)) {
             ObjectInputStream output = new ObjectInputStream(fips);
             
-            game = (Game) output.readObject(); // read the game object from file
-        }
-        catch (FileNotFoundException fnfe) {
+            game = (Game) output.readObject();// read the game object from file
+            player = (Player) output.readObject();
+            
+        }catch (FileNotFoundException fnfe) {
             throw new GameControlException(fnfe.getMessage());
         }
         catch (Exception e) {
@@ -62,29 +61,56 @@ public class GameControl {
         }
         //close output file
         Hurricane_game.setCurrentGame(game); // save Hurricane_game
-    }
-    }
+        }
     
-    public void static saveGame(Game game, String filePath) {
-        throws GameControlException {
     
-        try (FileOutPutStream fops = new FileOutPutStream(filePath)) {
+    public static void saveGame(Game currentGame, Player currentPlayer, String filePath)
+                        throws GameControlException {
+    
+        try( FileOutPutStream fops = new FileOutPutStream(filePath)) {
             ObjectOutPutStream output = new ObjectOutPutStream(fops);
             
-            output.writeObject(game); // write the game object out to the file
-        
-        } catch (IOException e) {
+            output.writeObject(currentGame); // write the game object out to the file
+            output.writeObject(currentPlayer); // write the player object out to the file
+            
+        }catch(IOException e) {
             throw new GameControlException(e.getMessage());
         }
-    }  
+    }      
     
-    }*/
     
-    /*
+    public static InventoryList[] createItemsCurrent() {
+        System.out.println("***Items the player currently has***");
+        //this.console.println(this.message);
+        return null;
+    }
+    
+    
+    public static InventoryList[] createItemsNeeded() {
+        System.out.println("***Items the player still needs***");
+        //this.console.println(this.message);
+        return null;
+    }
+    
+    
+    public void assignNamesToLocations(MainMap map) {
+      Location[][] locations = map.getLocations();
+      locations[1][1].setLocations(LocationName.HOUSE);      
+      locations[2][1].setLocations(LocationName.MEGA_STORE);
+      locations[3][4].setLocations(LocationName.CAMPING_STORE);
+      locations[1][3].setLocations(LocationName.DELIVERY_CENTER);
+    }
+
+    
+    public void createNewGame() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+/*
     Playing around with createItemList method. I think I want to put the items 
     in their appropriate stores
     */
-    public static Items[] createItemList() {
+    /*public static Items[] createItemList() {
         Items[] itemList = new Items[26];
         
         Items tuna = new Items();
@@ -270,20 +296,13 @@ public class GameControl {
         itemList[25] = water;
         
         return itemList;
-    }
+    }*/
     
     public void initializeMap() {
         
         
     }
-    
-    public void saveGame() {
-    
-    }
-    
-    public void getCurrentGame() {
-    
-    }
+}
     // Come back and figure out list. Need to create in items.
     /*public static Item[] createGameItemsList() {
         Item[] gameItemsList = new Item[50];
@@ -292,39 +311,3 @@ public class GameControl {
         tuna.setDescription("Tuna");
     
     }*/
-    
-    public static InventoryList[] createItemsCurrent() {
-        System.out.println("***Items the player currently has***");
-        //this.console.println(this.message);
-        return null;
-    }
-    
-    public static InventoryList[] createItemsNeeded() {
-        System.out.println("***Items the player still needs***");
-        //this.console.println(this.message);
-        return null;
-    }
-    
-    
-    
-    
-    /*public enum LocationNames{ // delete, it's in location
-        house,
-        mega_store, 
-        camping_store,
-        delivery_center; 
-    }*/
-    
-    
-    public void assignNamesToLocations(MainMap map) {
-      Location[][] locations = map.getLocations();
-      locations[1][1].setLocations(LocationName.HOUSE);      
-      locations[2][1].setLocations(LocationName.MEGA_STORE);
-      locations[3][4].setLocations(LocationName.CAMPING_STORE);
-      locations[1][3].setLocations(LocationName.DELIVERY_CENTER);
-    }
-
-    public void createNewGame() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-}
