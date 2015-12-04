@@ -19,11 +19,11 @@ public class Location implements Serializable{
     private int col;
     public boolean visited;
     private String nameOfLocation;
+    private int currentLocation;
     
     public Location() {
-        
     }
-
+    
     public static enum LocationName {
         HOUSE("House"),
         MEGA_STORE("Mega Store"), 
@@ -86,6 +86,15 @@ public class Location implements Serializable{
     public void setNameOfLocation(String nameOfLocation) {
         this.nameOfLocation = nameOfLocation;
     }
+
+    public int getCurrentLocation() {
+        return currentLocation;
+    }
+
+    public void setCurrentLocation(int currentLocation) {
+        this.currentLocation = currentLocation;
+    }
+
     @Override
     public int hashCode() {
         int hash = 3;
