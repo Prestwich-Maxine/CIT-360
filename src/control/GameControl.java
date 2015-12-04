@@ -5,6 +5,11 @@
  */
 package control;
 
+import hurricane_game.Hurricane_game;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.util.Scanner;
 import model.Game;
 import model.InventoryList;
@@ -38,6 +43,42 @@ public class GameControl {
         MainMap map = MapControl.createMap();
         game.setMap(map);
         }
+
+    public static void getLoadGame(String filePath) {
+        throws GameControlException {
+        
+        Game game = null;
+        
+        try (FileInputStream fips = new FileInputStream(filePath)) {
+            ObjectInputStream output = new ObjectInputStream(fips);
+            
+            game = (Game) output.readObject(); // read the game object from file
+        }
+        catch (FileNotFoundException fnfe) {
+            throw new GameControlException(fnfe.getMessage());
+        }
+        catch (Exception e) {
+            throw new GameControlException(e.getMessage());
+        }
+        //close output file
+        Hurricane_game.setCurrentGame(game); // save Hurricane_game
+    }
+    }
+    
+    public void static saveGame(Game game, String filePath) {
+        throws GameControlException {
+    
+        try (FileOutPutStream fops = new FileOutPutStream(filePath)) {
+            ObjectOutPutStream output = new ObjectOutPutStream(fops);
+            
+            output.writeObject(game); // write the game object out to the file
+        
+        } catch (IOException e) {
+            throw new GameControlException(e.getMessage());
+        }
+    }  
+    
+    }
     
     /*
     Playing around with createItemList method. I think I want to put the items 
@@ -254,11 +295,13 @@ public class GameControl {
     
     public static InventoryList[] createItemsCurrent() {
         System.out.println("***Items the player currently has***");
+        //this.console.println(this.message);
         return null;
     }
     
     public static InventoryList[] createItemsNeeded() {
         System.out.println("***Items the player still needs***");
+        //this.console.println(this.message);
         return null;
     }
     
