@@ -5,6 +5,9 @@
  */
 package view;
 
+import hurricane_game.Hurricane_game;
+import java.io.BufferedReader;
+import java.io.PrintWriter;
 import java.util.Scanner;
 
 /**
@@ -15,8 +18,11 @@ public abstract class View implements ViewInterface {
     
     private String menu;
     
+    protected final BufferedReader keyboard = Hurricane_game.getInFile();
+    protected final PrintWriter console = Hurricane_game.getOutFile();
+    
     public View(String menuString) {
-        menu = menuString;
+       menu = menuString; 
     }
     
     @Override
@@ -37,19 +43,22 @@ public abstract class View implements ViewInterface {
     @Override
      public char getInput() {
      
-        Scanner in = new Scanner(System.in);
+        //Scanner in = new Scanner(System.in);
         
         String input = "";
         char rtn = 0;
-        
+        try {
         while(input.length() < 1){
-            input = in.nextLine();
+            input = keyboard.readLine();
             
             if(input.length() < 1){
                 System.out.println("Please select an option");
             } else {
                 rtn = input.toUpperCase().charAt(0);
             }
+        }
+        } catch (Exception e) {
+            System.out.println("Error reading input: " + e.getMessage());
         }
         
         return rtn;
