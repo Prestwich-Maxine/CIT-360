@@ -43,7 +43,7 @@ public abstract class View implements ViewInterface {
         
     @Override
      public char getInput() {
-             
+//        boolean valid = false;
         String input = "";
         char rtn = 0;
         
@@ -51,6 +51,7 @@ public abstract class View implements ViewInterface {
         while(input.length() < 1){
             
             input = keyboard.readLine();
+            input = input.trim();
             
             if(input.length() < 1){
                 ErrorView.display(this.getClass().getName(),

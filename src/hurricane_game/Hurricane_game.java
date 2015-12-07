@@ -29,15 +29,15 @@ public class Hurricane_game {
     
     public static void main(String[] args) {
                 
-//            WelcomeView welcomeView = new WelcomeView();
-//            welcomeView.displayBanner();
-//
-//            player.setName(welcomeView.getPlayerName());
-//
-//            welcomeView.displayPlayerNameBanner(player);
+            WelcomeView welcomeView = new WelcomeView();
+            welcomeView.displayBanner();
+
+            player.setName(welcomeView.getPlayerName());
+
+            welcomeView.displayPlayerNameBanner(player);
          
-             MainMenuView mainView = new MainMenuView();
-             mainView.display(); 
+            MainMenuView mainView = new MainMenuView();
+            mainView.display(); 
     
         
         try {

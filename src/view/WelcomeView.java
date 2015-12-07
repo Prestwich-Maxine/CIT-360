@@ -12,7 +12,7 @@ import model.Player;
  *
  * @author maloriegomm
  */
-public class WelcomeView {
+public class WelcomeView extends View{
    
     public WelcomeView(){
         
@@ -41,7 +41,9 @@ public class WelcomeView {
         
         while(name.length() < 2) {
             System.out.println("Please Enter Your Name:");
-            //name = keyboard.readLine();
+//          I know that we need to make this class extend the view class
+//          but I don't know how to set it up without more errors'
+            name = keyboard.readLine();
             
             if(name.length() < 2){
                 System.out.println("Please Enter a name with at least 2 characters.");
@@ -58,6 +60,11 @@ public class WelcomeView {
         System.out.println("Welcome " + player.getName() + "!");
         System.out.println("Enjoy the Game!");
         System.out.println("************************************");
+    }
+
+    @Override
+    public boolean doAction(char input) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     
