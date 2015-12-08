@@ -9,7 +9,7 @@ import Exception.MapException;
 import control.GameControl;
 import java.util.Scanner;
 import model.MainMap;
-
+import model.StoreAislesCamping;
 /**
  *
  * @author Maxine
@@ -68,6 +68,9 @@ public class GameMenuView extends View{
                 break;
             case 'R':
                 showHouse();
+                break;
+            case 'Y':
+                printCampingItemReport();
                 break;
             case 'X':
                 return false;
@@ -149,4 +152,10 @@ public class GameMenuView extends View{
        HouseView house = new HouseView();
        house.display(); 
     }
+
+    public void printCampingItemReport(StoreAislesCamping printCampingReport ) {
+        StoreAislesCamping printCampingReport = new StoreAislesCamping();
+        printCampingReport.display();
+        
+        }
 }
