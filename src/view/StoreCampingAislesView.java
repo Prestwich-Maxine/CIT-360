@@ -59,4 +59,5 @@ public class StoreCampingAislesView extends View {
     private void enterCookingAisle() {
         System.out.println("NOT YET IMPLEMENTED");
     }
-}
+
+   }
