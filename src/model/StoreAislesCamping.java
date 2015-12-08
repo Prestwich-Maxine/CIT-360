@@ -61,6 +61,25 @@ public enum StoreAislesCamping implements Serializable {
         }
     }
     
+    public void printCampingReport(enum StoreAislesCamping, String outputLocation) {
+        
+        try (PrintWriter out = new PrintWriter(outputLocation)) {
+            
+            out.println("\n\n          Aisle Items          ");
+            out.printf("%n%-10s%10s", "Item", "Price");
+            out.printf("%n%-10s%10s", "----------", "----------");
+            
+            for (StoreAislesCamping item: items) {
+                out.printf("%n%-10s%10s", item.getName()
+                                        , item.getCost());
+            }
+        } catch (IOException ex) {
+            System.out.println("I/O: Error: " + ex.getMessage());
+        }
+        
+        
+    
+    }
     
     public int getCostOfItem() {
         return this.costOfItem;
