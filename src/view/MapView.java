@@ -14,20 +14,19 @@ import model.Player;
  *
  * @author maloriegomm
  */
-public class MapView extends View{
-    
+public class MapView extends View {
+
     public MapView() {
         super("H - House\n"
-            + "C - Camping Store\n"
-            + "M - Mega Store\n"
-            + "D - Delivery Center\n"
-            + "X - Return to Game Menu\n");
+                + "C - Camping Store\n"
+                + "M - Mega Store\n"
+                + "D - Delivery Center\n"
+                + "X - Return to Game Menu\n");
     }
-    
-    
-     @Override
+
+    @Override
     public boolean doAction(char input) {
-    
+
         switch (input) {
             case 'H':
                 movePlayerHouse();
@@ -40,60 +39,58 @@ public class MapView extends View{
                 break;
             case 'D':
                 movePlayerDeliveryCenter();
-                break;         
+                break;
             case 'X':
                 return false;
             default:
                 System.out.println("Please select a valid location input.");
                 break;
-            }
-            return true;
-        
         }
+        return true;
 
-
-    private void movePlayerHouse(){
-        try{
-            System.out.println("NOT FULLY IMPLEMENTED YET");
-            //set location corrdinants to house
-            MapControl mapControl = new MapControl(); //Create the instance of map control
-            mapControl.movePlayer(p, m);
-        } catch (MapException me) {
-        System.out.println(me.getMessage());
     }
+
+    private void movePlayerHouse() {
+//        try {
+//            System.out.println("NOT FULLY IMPLEMENTED YET");
+//            //set location corrdinants to house
+//            MapControl mapControl = new MapControl(); //Create the instance of map control
+//            mapControl.movePlayer(p, m);
+//        } catch (MapException me) {
+//            System.out.println(me.getMessage());
+//        }
     }
 
     private void movePlayerCampingStore() {
-       try{
-            System.out.println("NOT FULLY IMPLEMENTED YET");
-            //set location corrdinants to house
-            MapControl mapControl = new MapControl(); //Create the instance of map control
-            mapControl.movePlayer(p, m);
-        } catch (MapException me) {
-        System.out.println(me.getMessage());
-        } 
+//        try {
+//            System.out.println("NOT FULLY IMPLEMENTED YET");
+//            //set location corrdinants to house
+//            MapControl mapControl = new MapControl(); //Create the instance of map control
+//            mapControl.movePlayer(p, m);
+//        } catch (MapException me) {
+//            System.out.println(me.getMessage());
+//        }
     }
 
     private void movePlayerMegaStore() {
-       try{
-            System.out.println("NOT FULLY IMPLEMENTED YET");
-            //set location corrdinants to house
-            MapControl mapControl = new MapControl(); //Create the instance of map control
-            mapControl.movePlayer(p, m);
-        } catch (MapException me) {
-        System.out.println(me.getMessage());
-        }  
+//        try {
+//            System.out.println("NOT FULLY IMPLEMENTED YET");
+//            //set location corrdinants to house
+//            MapControl mapControl = new MapControl(); //Create the instance of map control
+//            mapControl.movePlayer(p, m);
+//        } catch (MapException me) {
+//            System.out.println(me.getMessage());
+//        }
     }
 
     private void movePlayerDeliveryCenter() {
-       try{
-            System.out.println("NOT FULLY IMPLEMENTED YET");
-            //set location corrdinants to house
-            MapControl mapControl = new MapControl(); //Create the instance of map control
-            mapControl.movePlayer(p, m);
-        } catch (MapException me) {
-        System.out.println(me.getMessage());
-        }
+//        try {
+//            System.out.println("NOT FULLY IMPLEMENTED YET");
+//            //set location corrdinants to house
+//            MapControl mapControl = new MapControl(); //Create the instance of map control
+//            mapControl.movePlayer(p, m);
+//        } catch (MapException me) {
+//            System.out.println(me.getMessage());
+//        }
     }
 }
-    

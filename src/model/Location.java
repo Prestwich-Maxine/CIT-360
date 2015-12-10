@@ -12,41 +12,17 @@ import java.util.Objects;
  *
  * @author maloriegomm
  */
-public class Location implements Serializable{
-    
+public class Location implements Serializable {
+
     private Item item;
     private int row;
     private int col;
     public boolean visited;
-    private String nameOfLocation;
+    private LocationName name;
     private int currentLocation;
-    
+
     public Location() {
     }
-    
-    public static enum LocationName {
-        HOUSE("House"),
-        MEGA_STORE("Mega Store"), 
-        CAMPING_STORE("Camping Store"),
-        DELIVERY_CENTER("Delivery Center"); 
-        
-        private final String positionName;
-        private String getName;
-        
-        LocationName(String name) {
-            this.positionName = name;
-        }
-        public String getName() {
-        return this.positionName;
-        }
-        
-        @Override
-        public String toString() {
-            return this.getName;
-        }
-    }
-    
-    
 
     public Item getItem() {
         return item;
@@ -79,12 +55,13 @@ public class Location implements Serializable{
     public void setVisited(boolean visited) {
         this.visited = visited;
     }
-    public String getNameOfLocation() {
-        return nameOfLocation;
+
+    public LocationName getName() {
+        return name;
     }
 
-    public void setNameOfLocation(String nameOfLocation) {
-        this.nameOfLocation = nameOfLocation;
+    public void setName(LocationName name) {
+        this.name = name;
     }
 
     public int getCurrentLocation() {
@@ -133,27 +110,25 @@ public class Location implements Serializable{
     public String toString() {
         return "Location{" + "item=" + item + ", row=" + row + ", col=" + col + ", visited=" + visited + '}';
     }
-    
+
     //////////////////////////////////////////
     //METHODS
     //////////////////////////////////////////
-    
-    
-    public boolean HasVisited(){
+    public boolean HasVisited() {
         return visited != false;
     }
-    
+
     // this will be used when player enters house rooms
-     public boolean HasItem(){
+    public boolean HasItem() {
         return item != null;
-    } 
+    }
 
     public void visited(boolean b) {
         System.out.println();
-        }
+    }
+
     public void setLocations(LocationName locationName) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
-    
+
 }

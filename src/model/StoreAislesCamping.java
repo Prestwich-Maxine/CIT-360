@@ -5,6 +5,7 @@
  */
 package model;
 
+import java.io.PrintWriter;
 import java.io.Serializable;
 //import java.util.Objects;
 
@@ -25,63 +26,61 @@ public enum StoreAislesCamping implements Serializable {
     GRILL("Grill", 20),
     PROPANE("Propane", 10),
     CHARCOAL("Charcoal", 10);
-    
+
     private final int costOfItem;
     private final String item;
-    
+
     StoreAislesCamping(String name, int cost) {
         this.costOfItem = cost;
         this.item = name;
     }
-    
+
     public int getcostOfItem() {
         return costOfItem;
     }
-    
+
     public String getItem() {
         return item;
     }
-    
+
     public void printItemList() {
-        
+
         StoreAislesCamping[] items = StoreAislesCamping.values();
-        
+
         int total = 0;
-        
+
         for (int q = 1; q <= 3; q++) {
             int quantity = 0 + q++;
-            
+
             for (StoreAislesCamping item : items) {
-                
+
                 total = item.getCostOfItem() * q;
-                
+
                 System.out.println(total);
-                
+
             }
         }
     }
-    
-    public void printCampingReport(enum StoreAislesCamping, String outputLocation) {
-        
+
+    public void printCampingReport(StoreAislesCamping aisles, String outputLocation) {
+
         try (PrintWriter out = new PrintWriter(outputLocation)) {
-            
+
             out.println("\n\n          Aisle Items          ");
             out.printf("%n%-10s%10s", "Item", "Price");
             out.printf("%n%-10s%10s", "----------", "----------");
-            
-            for (StoreAislesCamping item: items) {
-                out.printf("%n%-10s%10s", item.getName()
-                                        , item.getCost());
-            }
-        } catch (IOException ex) {
+
+//            for (StoreAislesCamping item: items) {
+//                out.printf("%n%-10s%10s", item.getName()
+//                                        , item.getCost());
+//            }
+        } catch (Exception ex) {
             System.out.println("I/O: Error: " + ex.getMessage());
         }
-        
-        
-    
+
     }
-    
+
     public int getCostOfItem() {
         return this.costOfItem;
     }
-}    
+}

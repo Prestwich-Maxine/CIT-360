@@ -24,20 +24,27 @@ public class Player implements Serializable{
     public int timeRemaining;
     public int currentSurvivalPoints;
     private int remainingSurvivalPoints;
-    private Location[][] location; 
+    private Location location; 
     
     
-   
-   
     public Player() {
-
+        inventory = new ArrayList<>();
+        deliveries = new ArrayList<>();
     }
 
-    public Location[][] getLocation() {
+    public void addItemToInventory(Item i) {
+        inventory.add(i);
+    }
+    
+    public void addDelivery(Deliveries d) {
+        deliveries.add(d);
+    }
+    
+    public Location getLocation() {
         return location;
     }
 
-    public void setLocation(Location[][] location) {
+    public void setLocation(Location location) {
         this.location = location;
     }
 

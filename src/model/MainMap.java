@@ -11,40 +11,48 @@ import java.io.Serializable;
  * @author Maxine
  */
 public class MainMap implements Serializable {
-    
-    private int NUM_ROWS = 2;
-    private int NUM_COLS = 2;
+
+    private int NUM_ROWS = 5;
+    private int NUM_COLS = 5;
     private Location[][] locations;
     private String names;
 
     public MainMap() {
-//        locations = new Location[NUM_ROWS][NUM_COLS];
-    }
 
-    public MainMap(int NUM_ROWS, int NUM_COLS) {
-        
-        if (NUM_ROWS < 1 || NUM_COLS < 1) {
-            System.out.println("The number of rows and columns must be greater than 0");
-            return;
-        }
-     
-        this.NUM_ROWS = NUM_ROWS;
-        this.NUM_COLS = NUM_COLS;
-        
-        this.locations = new Location[NUM_ROWS][NUM_COLS];
-        
-        for (int row = 0; row < NUM_ROWS; row++) {
-            for (int col = 0; col < NUM_COLS; col++) {
-                Location location  = new Location();
-                location.setCol(NUM_COLS);
-                location.setRow(NUM_ROWS);
+        int numRows = NUM_ROWS;
+        int numCols = NUM_COLS;
+
+        this.locations = new Location[numRows][numCols];
+
+        for (int row = 0; row < numRows; row++) {
+            for (int col = 0; col < numCols; col++) {
+                Location location = new Location();
+                location.setCol(col);
+                location.setRow(row);
                 location.setVisited(false);
-                
-                locations[NUM_ROWS][NUM_COLS] = location;
+
+                locations[row][col] = location;
             }
         }
+
+        locations[1][0].setName(LocationName.HOUSE);
+
+        locations[1][1].setName(LocationName.DELIVERY_CENTER);
+
+        locations[4][4].setName(LocationName.MEGA_STORE);
+
+        locations[0][3].setName(LocationName.CAMPING_STORE);
+
     }
 
+    public Location getStartingLocation() {
+        return locations[1][0];
+    }
+    
+    public Location getLocation(int row, int col) {
+        return locations[row][col];
+    }
+    
     public int getNUM_ROWS() {
         return NUM_ROWS;
     }
@@ -77,11 +85,9 @@ public class MainMap implements Serializable {
         this.names = names;
     }
 
-   
     ////////////////////////////////////////
     // METHODS
     ///////////////////////////////////////
-    
 //    public String toString() {
 //        String rtn = "";
 //        
@@ -94,28 +100,28 @@ public class MainMap implements Serializable {
 //        }
 //        return null;
 //    }
-    
-    
     //this is just me trying to get something to show up it's just 12 "x " when you run the 
     //Hurricane_game file
     public String toString() {
         String rtn = "";
-        
-        for(int row = 0; row < NUM_ROWS; row++) {
-            for(int col = 0; col < NUM_COLS; col++) {
-                if(locations[row][col] == null) {
+
+        for (int row = 0; row < locations.length; row++) {
+            for (int col = 0; col < locations[0].length; col++) {
+                if (locations[row][col] == null) {
                     rtn += "x  ";
-                }
-                else{
-                   rtn += "x  "; 
+                } else {
+                    if (locations[row][col].getName() == null) {
+                        rtn += "x  ";
+                    } else {
+                        rtn += locations[row][col].getName().getMapKey() + "  ";
+                    }
                 }
             }
             rtn += "\n";
         }
-        return rtn + "this worked";
+        return rtn;
     }
-    
-    
+
 //    public void initialize() {
 //      
 //        for(int row = 0; row < NUM_ROWS; row++) {
@@ -129,11 +135,8 @@ public class MainMap implements Serializable {
 //        }
 //        
 //    }
-
     public void initialize() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
-    
-    
+
 }

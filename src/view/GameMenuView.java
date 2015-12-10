@@ -7,7 +7,10 @@ package view;
 
 import Exception.MapException;
 import control.GameControl;
+import control.MapControl;
 import java.util.Scanner;
+import model.Game;
+import model.Location;
 import model.MainMap;
 import model.StoreAislesCamping;
 /**
@@ -18,7 +21,7 @@ public class GameMenuView extends View{
     
      public GameMenuView() {
         super("M - Map of town\n"
-              + "S - Supplies list\n"
+              + "S - Show current location\n"
               + "I - Inventory list\n"
               + "L - Move to a new location\n"
               + "D - View deliveries\n"
@@ -70,7 +73,10 @@ public class GameMenuView extends View{
                 showHouse();
                 break;
             case 'Y':
-                printCampingItemReport();
+//                printCampingItemReport();
+                break;
+            case 'S':
+                showCurrentLocation();
                 break;
             case 'X':
                 return false;
@@ -83,11 +89,8 @@ public class GameMenuView extends View{
         }
 
     private void displayMap() {
-//        MainMap map = new MainMap();
-//        map.toString();
-//        
-////        MapView viewMap = new MapView();
-////        viewMap.display();
+        MainMap m = Game.getInstance().getMap();
+        System.out.println(m.toString());
     }
 
     private void suppliesList() {
@@ -101,12 +104,26 @@ public class GameMenuView extends View{
     
     
     private void moveToNewLocation() {
-    
         System.out.println("Every time you move location, 30 minutes will be duducted from your remaining time until the Hurricane.");
-        //Display map graphic
+        System.out.println("Please input coordinates (e.g.  3,4)");
         
-        MapView mapView = new MapView();
-        mapView.display();
+        try {
+            String input = keyboard.readLine();
+            
+            String[] coordinates = input.split(",");
+            
+            int row = Integer.parseInt(coordinates[0]);
+            int col = Integer.parseInt(coordinates[1]);
+            
+            MapControl mc = new MapControl();
+            
+            mc.movePlayer(Game.getInstance().getPlayer(), Game.getInstance().getMap(), row, col);
+            
+        } catch (MapException me) {
+            System.out.println(me.getMessage());  
+        } catch (Exception e) {
+            System.out.println("I couldn't read your input try again");
+        }
     }
 
     private void deliverSupplies() {
@@ -131,7 +148,8 @@ public class GameMenuView extends View{
     }
 
     private void timeRemaining() {
-        System.out.println("NOT IMPLEMENTED YET");
+        int t = Game.getInstance().getPlayer().getTimeRemaining();
+        System.out.println("You have " + t + " minutes remaining");
     }
 
     private void showHelpMenu() {
@@ -154,8 +172,16 @@ public class GameMenuView extends View{
     }
 
     public void printCampingItemReport(StoreAislesCamping printCampingReport ) {
-        StoreAislesCamping printCampingReport = new StoreAislesCamping();
-        printCampingReport.display();
+//        StoreAislesCamping printCampingReport = new StoreAislesCamping();
+//        printCampingReport.display();
         
         }
+
+    private void showCurrentLocation() {
+        Location currentLocation = Game.getInstance().getPlayer().getLocation();
+        System.out.println("You are at: (" + currentLocation.getRow() + ", " + currentLocation.getCol() + ")");
+        if(currentLocation.getName() != null) {
+            System.out.println("Which is the " + currentLocation.getName().getName());
+        }
+    }
 }

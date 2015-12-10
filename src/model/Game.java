@@ -24,8 +24,22 @@ public class Game implements Serializable {
     private InventoryList[]itemsNeeded;
     public InventoryList neededSurvivalPoints;
 
-    public Game() {
+    private static Game instance;
+    
+    private Game() {
         
+    }
+    
+    public static Game getInstance() {
+        if(instance == null) {
+            instance = new Game();
+        }
+        
+        return instance;
+    }
+    
+    public static void setInstance(Game loadedGame) {
+        instance = loadedGame;
     }
 
     public Player getPlayer() {
