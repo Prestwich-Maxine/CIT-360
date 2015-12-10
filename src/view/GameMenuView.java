@@ -25,12 +25,9 @@ public class GameMenuView extends View{
               + "I - Inventory list\n"
               + "L - Move to a new location\n"
               + "D - View deliveries\n"
-              + "V - View what location has\n"
               + "A - Money Accounts\n"
               + "P - Survival Points Earned\n"
               + "T - Time before hurricane\n"
-              + "C - Enter Delivery Center\n"//This is just for me to test the DeliveryCenterView
-              + "R - Enter House\n"
               + "H - Help Menu\n"
               + "X - Exit to Main Menu\n");
     }
@@ -52,11 +49,8 @@ public class GameMenuView extends View{
             case 'D':
                 viewDeliveries();
                 break;
-            case 'V':
-                viewLocationItems();
-                break;
             case 'A':
-                moneyAccount();
+                showMoneyRemaining();
             case 'P':
                 survivalPointsEarned();
                 break;
@@ -65,12 +59,6 @@ public class GameMenuView extends View{
                 break;
             case 'H':
                 showHelpMenu();
-                break;
-            case 'C':
-                showDeliveryCenter();
-                break;
-            case 'R':
-                showHouse();
                 break;
             case 'Y':
 //                printCampingItemReport();
@@ -94,6 +82,7 @@ public class GameMenuView extends View{
     }
 
     private void suppliesList() {
+        // this can just be a list that they can view  with the associated survival points and cost
         System.out.println("NOT IMPLEMENTED YET");
         }
 
@@ -126,20 +115,11 @@ public class GameMenuView extends View{
         }
     }
 
-    private void deliverSupplies() {
-        System.out.println("NOT IMPLEMENTED YET");
-        
-    }
-
     private void viewDeliveries() {
         System.out.println("NOT IMPLEMENTED YET");
     }
 
-    private void viewLocationItems() {
-        System.out.println("NOT IMPLEMENTED YET");
-    }
-
-    private void moneyAccount() {
+    private void showMoneyRemaining() {
         System.out.println("NOT IMPLEMENTED YET");
     }
 
