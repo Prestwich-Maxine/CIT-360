@@ -30,7 +30,7 @@ public class GameControl {
         Game.setInstance(null);
         Game game = Game.getInstance();
         Player player = new Player();
-        player.setTimeRemaining(120);
+        player.setTimeRemaining(60);
         game.setPlayer(player);
 
         WelcomeView welcomeView = new WelcomeView();

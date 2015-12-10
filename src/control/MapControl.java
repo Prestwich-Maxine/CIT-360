@@ -43,16 +43,24 @@ public class MapControl {
         Location currentLocation = p.getLocation();
         Location newLocation = m.getLocation(newRow, newCol);
         
-        //TODO calculate distance
-        deductTime(p);
-
-        p.setLocation(newLocation);
-        
         if(p.getTimeRemaining() <= 0) {
+            System.out.println("You are out of time."
+                    + "/n The hurricane has hit and you will be moved home.");
+            
+            p.setLocation(m.getStartingLocation());
             return false;
+            
+            // How do we actually end the game??
+            
+        } else{
+            //TODO calculate distance
+            deductTime(p);
+
+            p.setLocation(newLocation);
+            
+            return true;
         }
         
-        return true;
     }
 
 //    private int row;

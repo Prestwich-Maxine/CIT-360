@@ -6,9 +6,7 @@
 package view;
 
 import Exception.MapException;
-import control.GameControl;
 import control.MapControl;
-import java.util.Scanner;
 import model.Game;
 import model.Location;
 import model.MainMap;
@@ -136,20 +134,10 @@ public class GameMenuView extends View{
         HelpMenuView helpMenu = new HelpMenuView();
         helpMenu.display();
     }
-    
-     private void showDeliveryCenter() {
-        DeliveryCenterView deliveryCenter = new DeliveryCenterView();
-        deliveryCenter.display();
-    }
         
     private void displayGameMenu() {
         
     }   
-
-    private void showHouse() {
-       HouseView house = new HouseView();
-       house.display(); 
-    }
 
     public void printCampingItemReport(StoreAislesCamping printCampingReport ) {
 //        StoreAislesCamping printCampingReport = new StoreAislesCamping();
@@ -158,10 +146,20 @@ public class GameMenuView extends View{
         }
 
     private void showCurrentLocation() {
-        Location currentLocation = Game.getInstance().getPlayer().getLocation();
-        System.out.println("You are at: (" + currentLocation.getRow() + ", " + currentLocation.getCol() + ")");
-        if(currentLocation.getName() != null) {
-            System.out.println("Which is the " + currentLocation.getName().getName());
-        }
+                
+//        Location currentLocation = Game.getInstance().getPlayer().getLocation();
+//        int timeRemaining = Game.getInstance().getPlayer().getTimeRemaining();
+//        Location startingLocation = m.getStartingLocation();
+//        
+//        if (timeRemaining <= 0 && currentLocation == startingLocation){
+//            System.out.println("The hurricane has hit and you should be home.  The game is over.");
+//
+//        } else{
+            Location currentLocation = Game.getInstance().getPlayer().getLocation();
+            System.out.println("You are at: (" + currentLocation.getRow() + ", " + currentLocation.getCol() + ")");
+            if(currentLocation.getName() != null) {
+                System.out.println("Which is the " + currentLocation.getName().getName());
+            }
+//        }
     }
 }
