@@ -6,6 +6,8 @@
 package model;
 
 import java.io.Serializable;
+import java.util.Arrays;
+import java.util.Objects;
 
 /**
  *
@@ -16,21 +18,34 @@ public enum Item implements Serializable{
     
     // ("name of item", SP, Cost, "??")
     //FOOD//
-    TUNA("Tuna", 1, 10,"Kitchen"),
-    PROTEIN_BAR("Protein Bar", 1, 10, "Kitchen"),
-    BEANS("Beans", 1, 10, "Kitchen"),
-    CHOCOLATE("Chocolate", 2, 10, "Kitchen"),
-    COOKIES("Cookies", 3, 10, "Kitchen"),
-    CANDY("Candy", 1, 10, "Kitchen"),
-    //CLOTHES//
-    JACKET("Jacket", 20, 50, "Bedroom"),
+    CANNED_MEAT("Canned Meat", 2, 3,"Food"),
+    PROTEIN_BAR("Protein Bar", 1, 2, "Food"),
+    BEANS("Beans", 1, 2, "Food"),
+    WATER("Water", 5, 5, "Food"),
+    BREAD("Bread", 1, 10, "Food"),
+    FRESH_VEGETABLES("Fresh Vegetables", 1, 10, "Food"),
+    FRESH_FRUIT("Fresh Fruit", 1, 10, "Food"),
+    CANNED_FRUIT("Protein Bar", 1, 10, "Food"),
+    CANNED_VEGETABLES("Beans", 1, 10, "Food"),
+    CHOCOLATE("Chocolate", 2, 10, "Food"),
+    COOKIES("Cookies", 3, 10, "Food"),
+    CANDY("Candy", 1, 10, "Food"),
     
-    SWEATSHIRT("Sweatshirt", 25, 50, "Bedroom"),
+    //CLOTHES//
+    JACKET("Jacket", 20, 50, "Clothes"),
+    SWEATSHIRT("Sweatshirt", 25, 50, "Clothes"),
     SHOES("Shoes", 20, 50, "Bedroom"),
+    
+    //SURVIVAL//
+    TENT("Tent", 15, 45, "Survival"),
+    TARP("Tarp", 8, 10, "Survival"),
+    FUEL("Fuel", 18, 10, "Survival"),
+    CAMP_STOVE("Tent", 22, 35, "Survival"),
+  
     //PERSONAL CARE//
-    HYGIENE_KIT("Hygiene Kit", 10, 30,"Bathroom"),
-    TOILET_PAPER("Toilet paper", 5, 20, "Bathroom"),
-    MEDICINE("Medicine", 5, 30, "Bathroom"); 
+    HYGIENE_KIT("Hygiene Kit", 10, 30,"PersonalCare"),
+    TOILET_PAPER("Toilet paper", 5, 20, "PersonalCare"),
+    MEDICINE("Medicine", 5, 30, "PersonalCare"); 
     
     
     private final String itemDescription;
