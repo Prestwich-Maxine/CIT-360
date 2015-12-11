@@ -18,18 +18,20 @@ public enum Item implements Serializable{
     
     // ("name of item", SP, Cost, "??")
     //FOOD//
-    CANNED_MEAT("Canned Meat", 2, 3,"Food"),
-    PROTEIN_BAR("Protein Bar", 1, 2, "Food"),
-    BEANS("Beans", 1, 2, "Food"),
-    WATER("Water", 5, 5, "Food"),
-    BREAD("Bread", 1, 10, "Food"),
-    FRESH_VEGETABLES("Fresh Vegetables", 1, 10, "Food"),
-    FRESH_FRUIT("Fresh Fruit", 1, 10, "Food"),
-    CANNED_FRUIT("Protein Bar", 1, 10, "Food"),
-    CANNED_VEGETABLES("Beans", 1, 10, "Food"),
-    CHOCOLATE("Chocolate", 2, 10, "Food"),
-    COOKIES("Cookies", 3, 10, "Food"),
-    CANDY("Candy", 1, 10, "Food"),
+    CANNED_MEAT("Canned Meat", 4, 5,"Food"),
+    PROTEIN_BAR("Protein Bar", 5, 5, "Food"),
+    BEANS("Beans", 3, 5, "Food"),
+    WATER("Water", 10, 5, "Food"),
+    BREAD("Bread", 5, 5, "Food"),
+    CRACKERS("Crackers", 5, 5, "Food"),
+    GRANOLA_BARS("Granola Bars", 10, 5, "Food"),
+    FRESH_VEGETABLES("Fresh Vegetables", 15, 10, "Food"),
+    FRESH_FRUIT("Fresh Fruit", 15, 10, "Food"),
+    CANNED_FRUIT("Canned Fruit", 5, 5, "Food"),
+    CANNED_VEGETABLES("Canned Vegetables", 4, 5, "Food"),
+    CHOCOLATE("Chocolate", 2, 5, "Food"),
+    COOKIES("Cookies", 2, 5, "Food"),
+    CANDY("Candy", 2, 5, "Food"),
     
     //CLOTHES//
     JACKET("Jacket", 20, 50, "Clothes"),
