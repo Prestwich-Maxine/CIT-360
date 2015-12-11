@@ -9,6 +9,7 @@ import Exception.MapException;
 import control.MapControl;
 import model.Game;
 import model.Location;
+import model.LocationName;
 import model.MainMap;
 import model.StoreAislesCamping;
 /**
@@ -93,6 +94,11 @@ public class GameMenuView extends View{
     private void moveToNewLocation() {
         System.out.println("Every time you move location, 30 minutes will be duducted from your remaining time until the Hurricane.");
         System.out.println("Please input coordinates (e.g.  3,4)");
+        System.out.println("Location Quick List:");
+        System.out.println("House: 1,0");
+        System.out.println("Delivery Center: 1,1");
+        System.out.println("Mega Store: 4,4");
+        System.out.println("Camping Store: 0,3");
         
         try {
             String input = keyboard.readLine();
