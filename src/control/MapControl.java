@@ -44,8 +44,8 @@ public class MapControl {
         Location newLocation = m.getLocation(newRow, newCol);
         
         if(p.getTimeRemaining() <= 0) {
-            System.out.println("You are out of time."
-                    + "/n The hurricane has hit and you will be moved home.");
+            System.out.println("You ran out of time."
+                    + "The hurricane has hit and you will be moved to the House to see if you survived the Hurricane.");
             
             p.setLocation(m.getStartingLocation());
             return false;
