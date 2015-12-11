@@ -17,9 +17,7 @@ public class InventoryList implements Serializable{
     
     public String itemsCurrent [];
     private String itemsNeeded [];//can be an Enum or Array because it doesn't need to grow or shrink
-    public int currentSurvivalPoints;
-    public int neededSurvivalPoints;//can be an Enum or Array because it doesn't need to grow or shrink
-    private int remainingSurvivalPoints;
+
 
     
     public InventoryList() {
@@ -42,29 +40,11 @@ public class InventoryList implements Serializable{
         this.itemsNeeded = itemsNeeded;
     }
 
-    public int getCurrentSurvivalPoints() {
-        return currentSurvivalPoints;
-    }
-
-    public void setCurrentSurvivalPoints(int currentSurvivalPoints) {
-        this.currentSurvivalPoints = currentSurvivalPoints;
-    }
-
-    public int getNeededSurvivalPoints() {
-        return neededSurvivalPoints;
-    }
-
-    public void setNeededSurvivalPoints(int neededSurvivalPoints) {
-        this.neededSurvivalPoints = neededSurvivalPoints;
-    }
-    
-    @Override
+     @Override
     public int hashCode() {
-        int hash = 5;
-        hash = 53 * hash + Arrays.deepHashCode(this.itemsCurrent);
-        hash = 53 * hash + Arrays.deepHashCode(this.itemsNeeded);
-        hash = 53 * hash + this.currentSurvivalPoints;
-        hash = 53 * hash + this.neededSurvivalPoints;
+        int hash = 3;
+        hash = 17 * hash + Arrays.deepHashCode(this.itemsCurrent);
+        hash = 17 * hash + Arrays.deepHashCode(this.itemsNeeded);
         return hash;
     }
 
@@ -83,23 +63,19 @@ public class InventoryList implements Serializable{
         if (!Arrays.deepEquals(this.itemsNeeded, other.itemsNeeded)) {
             return false;
         }
-        if (this.currentSurvivalPoints != other.currentSurvivalPoints) {
-            return false;
-        }
-        if (this.neededSurvivalPoints != other.neededSurvivalPoints) {
-            return false;
-        }
         return true;
     }
-
+    
     @Override
     public String toString() {
-        return "InventoryList{" + "itemsCurrent=" + itemsCurrent + ", itemsNeeded=" + itemsNeeded + ", currentSurvivalPoints=" + currentSurvivalPoints + ", neededSurvivalPoints=" + neededSurvivalPoints + '}';
+        return "InventoryList{" + "itemsCurrent=" + itemsCurrent + ", itemsNeeded=" + itemsNeeded + '}';
     }
-  
+
+
     ////////////////////////////////////
     //METHODS
     ////////////////////////////////////
 
+   
    
 }

@@ -44,10 +44,28 @@ public class MapControl {
         Location newLocation = m.getLocation(newRow, newCol);
         
         if(p.getTimeRemaining() <= 0) {
-            System.out.println("You ran out of time."
-                    + "The hurricane has hit and you will be moved to the House to see if you survived the Hurricane.");
-            
+            System.out.println("You are out of TIME!"
+                    + "The hurricane is about to hit and you will be move to the House to see if you survived the Hurricane.");
+           
             p.setLocation(m.getStartingLocation());
+            //check to see is player won
+                int currentSP = Game.getInstance().getPlayer().getCurrentSurvivalPoints();
+                int neededSP = Game.getInstance().getNeededSurvivalPoints();
+                int remainingSP = neededSP - currentSP;
+
+                if (currentSP < 800) {
+                    System.out.println("You currently have: "
+                            + "" + currentSP + " Survival Points");
+                    System.out.println("You needed to have at least 800 Survival Points to survive the hurricane..."
+                            + "Unfortunatly you did NOT survive the hurricane!"
+                            + "GAME OVER");
+                } else {
+                    System.out.println("You currently have: "
+                            + "" + currentSP + " Survival Points");
+                    System.out.println("You needed at least 800 Survival Points to survive the hurricane..."
+                            + "It looks like you SURVIVED the hurricane!!!"
+                            + "CONGRATULATIONS!  YOU'VE WON.");
+                }
             return false;
             
             // How do we actually end the game??

@@ -23,7 +23,7 @@ public class Player implements Serializable{
     public String itemsCurrent [];
     public int timeRemaining;
     public int currentSurvivalPoints;
-    private int remainingSurvivalPoints;
+    public int remainingSurvivalPoints;
     private Location location; 
     
     

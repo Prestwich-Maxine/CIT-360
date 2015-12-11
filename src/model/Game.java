@@ -18,12 +18,12 @@ public class Game implements Serializable {
 
     private Player player;
     private MainMap map;
-    private InventoryList survivalPoints;
     private Item[] gameItemList;
     private InventoryList[] itemsList;//can be an Enum or Array because it doesn't need to grow or shrink
     private InventoryList[]itemsNeeded;
-    public InventoryList neededSurvivalPoints;
+    public int neededSurvivalPoints;
 
+    
     private static Game instance;
     
     private Game() {
@@ -58,21 +58,22 @@ public class Game implements Serializable {
         this.map = map;
     }
 
-    public InventoryList getSurvivalPoints() {
-        return survivalPoints;
+    public Item[] getGameItemList() {
+        return gameItemList;
     }
 
-    public void setSurvivalPoints(InventoryList survivalPoints) {
-        this.survivalPoints = survivalPoints;
+    public void setGameItemList(Item[] gameItemList) {
+        this.gameItemList = gameItemList;
     }
 
-    public InventoryList getNeededSurvivalPoints() {
+    public int getNeededSurvivalPoints() {
         return neededSurvivalPoints;
     }
 
-    public void setNeededSurvivalPoints(InventoryList neededSurvivalPoints) {
+    public void setNeededSurvivalPoints(int neededSurvivalPoints) {
         this.neededSurvivalPoints = neededSurvivalPoints;
     }
+    
 
     public InventoryList[] getItemsList() {
         return itemsList;
@@ -89,17 +90,16 @@ public class Game implements Serializable {
     public void setItemsNeeded(InventoryList[] itemsNeeded) {
         this.itemsNeeded = itemsNeeded;
     }
-    
+
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 13 * hash + Objects.hashCode(this.player);
-        hash = 13 * hash + Objects.hashCode(this.survivalPoints);
-        //hash = 13 * hash + this.timeRemaining;
-        //hash = 13 * hash + this.numberOfPointsEarned;
-        hash = 13 * hash + Arrays.deepHashCode(this.itemsList);
-        hash = 13 * hash + Arrays.deepHashCode(this.itemsNeeded);
-        hash = 13 * hash + Objects.hashCode(this.neededSurvivalPoints);
+        int hash = 3;
+        hash = 61 * hash + Objects.hashCode(this.player);
+        hash = 61 * hash + Objects.hashCode(this.map);
+        hash = 61 * hash + Arrays.deepHashCode(this.gameItemList);
+        hash = 61 * hash + Arrays.deepHashCode(this.itemsList);
+        hash = 61 * hash + Arrays.deepHashCode(this.itemsNeeded);
+        hash = 61 * hash + this.neededSurvivalPoints;
         return hash;
     }
 
@@ -115,26 +115,30 @@ public class Game implements Serializable {
         if (!Objects.equals(this.player, other.player)) {
             return false;
         }
-        if (!Objects.equals(this.survivalPoints, other.survivalPoints)) {
+        if (!Objects.equals(this.map, other.map)) {
             return false;
         }
-        /*if (this.timeRemaining != other.timeRemaining) {
+        if (!Arrays.deepEquals(this.gameItemList, other.gameItemList)) {
             return false;
         }
-        if (this.numberOfPointsEarned != other.numberOfPointsEarned) {
-            return false;
-        }*/
         if (!Arrays.deepEquals(this.itemsList, other.itemsList)) {
             return false;
         }
         if (!Arrays.deepEquals(this.itemsNeeded, other.itemsNeeded)) {
             return false;
         }
-        if (!Objects.equals(this.neededSurvivalPoints, other.neededSurvivalPoints)) {
+        if (this.neededSurvivalPoints != other.neededSurvivalPoints) {
             return false;
         }
         return true;
     }
+
+    @Override
+    public String toString() {
+        return "Game{" + "player=" + player + ", map=" + map + ", gameItemList=" + gameItemList + ", itemsList=" + itemsList + ", itemsNeeded=" + itemsNeeded + ", neededSurvivalPoints=" + neededSurvivalPoints + '}';
+    }
+    
+   
     ///////////////////////////////////////////////
     // METHODS
     ///////////////////////////////////////////////

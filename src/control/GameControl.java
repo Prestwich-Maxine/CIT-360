@@ -31,6 +31,8 @@ public class GameControl {
         Game game = Game.getInstance();
         Player player = new Player();
         player.setTimeRemaining(60);
+        player.setMoney(500);
+        game.setNeededSurvivalPoints(800);
         game.setPlayer(player);
 
         WelcomeView welcomeView = new WelcomeView();
