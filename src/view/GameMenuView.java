@@ -24,7 +24,7 @@ public class GameMenuView extends View {
                 + "S - Show current location\n"
                 + "I - Inventory list\n"
                 + "L - Move to a new location\n"
-                + "D - View deliveries\n"
+                + "D - View deliveries\n" 
                 + "A - Money Accounts\n"
                 + "P - Survival Points Earned\n"
                 + "T - Time before hurricane\n"
@@ -74,21 +74,38 @@ public class GameMenuView extends View {
         return true;
 
     }
-
+    
+    
+/*******************************************************************************/
     private void displayMap() {
         MainMap m = Game.getInstance().getMap();
         System.out.println(m.toString());
     }
 
+    
+/*******************************************************************************/
     private void suppliesList() {
         // this can just be a list that they can view  with the associated survival points and cost
         System.out.println("NOT IMPLEMENTED YET");
     }
-
+    
+ 
+/*******************************************************************************/
     private void inventoryList() {
         System.out.println("NOT IMPLEMENTED YET");
     }
+    
+    
+/*******************************************************************************/
+    private void survivalPointsEarned() {
+        
+//        int neededSP = Game.getInstance().getNeededSurvivalPoints();
+        
+        System.out.println("NOT IMPLEMENTED YET");
+    }
+    
 
+/*******************************************************************************/
     private void showCurrentLocation() {
 
         Location currentLocation = Game.getInstance().getPlayer().getLocation();
@@ -118,7 +135,7 @@ public class GameMenuView extends View {
     }
 
     
-
+/*******************************************************************************/
     private void moveToNewLocation() {
         System.out.println("Every time you move location, 30 minutes will be duducted from your remaining time until the Hurricane.");
         System.out.println("Please input coordinates (e.g.  3,4)");
@@ -156,32 +173,39 @@ public class GameMenuView extends View {
         }
     }
 
+
+/*******************************************************************************/    
     private void viewDeliveries() {
         System.out.println("NOT IMPLEMENTED YET");
     }
 
+    
+/*******************************************************************************/    
     private void showMoneyRemaining() {
         System.out.println("NOT IMPLEMENTED YET");
     }
 
-    private void survivalPointsEarned() {
-        System.out.println("NOT IMPLEMENTED YET");
-    }
 
+/*******************************************************************************/ 
     private void timeRemaining() {
         int t = Game.getInstance().getPlayer().getTimeRemaining();
         System.out.println("You have " + t + " minutes remaining");
     }
-
+    
+    
+/*******************************************************************************/
     private void showHelpMenu() {
         HelpMenuView helpMenu = new HelpMenuView();
         helpMenu.display();
     }
 
+    
+/*******************************************************************************/
     private void displayGameMenu() {
 
     }
-
+    
+/*******************************************************************************/
     public void printCampingItemReport(StoreAislesCamping printCampingReport) {
 //        StoreAislesCamping printCampingReport = new StoreAislesCamping();
 //        printCampingReport.display();

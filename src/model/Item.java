@@ -6,8 +6,6 @@
 package model;
 
 import java.io.Serializable;
-import java.util.Arrays;
-import java.util.Objects;
 
 /**
  *
@@ -16,18 +14,24 @@ import java.util.Objects;
 
 public enum Item implements Serializable{
     
+    // ("name of item", SP, Cost, "??")
+    //FOOD//
     TUNA("Tuna", 1, 10,"Kitchen"),
     PROTEIN_BAR("Protein Bar", 1, 10, "Kitchen"),
     BEANS("Beans", 1, 10, "Kitchen"),
     CHOCOLATE("Chocolate", 2, 10, "Kitchen"),
     COOKIES("Cookies", 3, 10, "Kitchen"),
     CANDY("Candy", 1, 10, "Kitchen"),
+    //CLOTHES//
     JACKET("Jacket", 20, 50, "Bedroom"),
+    
     SWEATSHIRT("Sweatshirt", 25, 50, "Bedroom"),
     SHOES("Shoes", 20, 50, "Bedroom"),
+    //PERSONAL CARE//
     HYGIENE_KIT("Hygiene Kit", 10, 30,"Bathroom"),
     TOILET_PAPER("Toilet paper", 5, 20, "Bathroom"),
     MEDICINE("Medicine", 5, 30, "Bathroom"); 
+    
     
     private final String itemDescription;
     private final int itemCost;        
