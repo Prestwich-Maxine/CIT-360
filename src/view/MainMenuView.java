@@ -72,9 +72,8 @@ public class MainMenuView extends View {
 
     private void loadGame() {
         // prompt for and get the name of the file to save the gamein
-        System.out.println("\n\nEnter the file path for where the game"
-                + " is to be saved.");
-
+        System.out.println("\n\nEnter the name of your game to be retrieved.");
+        
         String filePath = "";
 
         try {
@@ -101,8 +100,8 @@ public class MainMenuView extends View {
 
     private void saveGame() {
         // Prompt for and get the name of the file to save the game
-        System.out.println("\n\nEnter the file path for file where the game "
-                + "is to be saved.");
+        System.out.println("To save your game, enter a name that will be\n "
+                + "used to retrieve it later.");
 
         String filePath = "";
 
@@ -118,5 +117,7 @@ public class MainMenuView extends View {
         } catch (Exception e) {
             ErrorView.display("MainMenuView", e.getMessage());
         }
+        
+        System.out.println(filePath + " has been saved.");
     }
 }
