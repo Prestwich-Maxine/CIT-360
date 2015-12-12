@@ -16,7 +16,7 @@ import java.util.Objects;
 
 public enum Item implements Serializable{
     
-    // ("name of item", SP, Cost, "??")
+    // ("name of item", SP, Cost, Category)
     //FOOD//
     CANNED_MEAT("Canned Meat", 4, 5,"Food"),
     PROTEIN_BAR("Protein Bar", 5, 5, "Food"),
@@ -45,9 +45,9 @@ public enum Item implements Serializable{
     CAMP_STOVE("Tent", 22, 35, "Survival"),
   
     //PERSONAL CARE//
-    HYGIENE_KIT("Hygiene Kit", 10, 30,"PersonalCare"),
-    TOILET_PAPER("Toilet paper", 5, 20, "PersonalCare"),
-    MEDICINE("Medicine", 5, 30, "PersonalCare"); 
+    HYGIENE_KIT("Hygiene Kit", 10, 30,"Personal Care"),
+    TOILET_PAPER("Toilet paper", 5, 20, "Personal Care"),
+    MEDICINE("Medicine", 5, 30, "Personal Care"); 
     
     
     private final String itemDescription;
@@ -60,6 +60,7 @@ public enum Item implements Serializable{
         this.itemCost = cost;
         this.survivalPoints = points;
         this.categoryName = category;
+        
     }
 
     public String getItemDescription() {
