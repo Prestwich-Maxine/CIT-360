@@ -14,6 +14,7 @@ import model.Location;
 import model.LocationName;
 import model.MainMap;
 import model.StoreAislesCamping;
+import model.Item;
 
 /**
  *
@@ -211,6 +212,8 @@ public class GameMenuView extends View {
     }
 
     private void showAllItems() {
+        
+         
         
         }
 }
