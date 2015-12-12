@@ -5,6 +5,7 @@
  */
 package view;
 
+import control.DeliveryControl;
 import model.Deliveries;
 
 /**
@@ -45,7 +46,7 @@ public class DeliveryCenterView extends View{
 
     private void ChooseDelivery() {
         System.out.println("You Selected 'Choose a Delivery'. /n");
-        System.out.println("Each delivery will take half an hour off your time./n");
+        System.out.println("Each delivery will take one hour off your time./n");
         System.out.println("Which type of delivery would you like to make?");
         
         deliveryOptions();
@@ -53,11 +54,12 @@ public class DeliveryCenterView extends View{
     }
     
     private void MakeDelivery() {
-        System.out.println("NOT IMPLEMENTED YET"); 
+         
     }
 
     private void ViewDeliveries() {
-        System.out.println("NOT IMPLEMENTED YET");  
+        DeliveryControl deliveryControl = new DeliveryControl();
+        deliveryControl.checkDeliveries(10);
     }
 
     private void ReturnGameMenu() {
