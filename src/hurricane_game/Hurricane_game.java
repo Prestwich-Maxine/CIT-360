@@ -19,7 +19,7 @@ import view.WelcomeView;
  * @author maloriegomm
  */
 public class Hurricane_game {
-    
+
     private static Player player = null;
 
     private static PrintWriter outFile = null;
@@ -40,23 +40,23 @@ public class Hurricane_game {
             String filePath = "log.txt";
             Hurricane_game.logFile = new PrintWriter(filePath);
 
-//            WelcomeView welcomeView = new WelcomeView();
-//            welcomeView.displayBanner();
+            WelcomeView welcomeView = new WelcomeView();
+            welcomeView.displayBanner();
 
             player = new Player();
-            
+
             Game.getInstance().setPlayer(player);
 
-//            player.setName(welcomeView.getPlayerName());
+             player.setName(welcomeView.getPlayerName());
 //
-//            welcomeView.displayPlayerNameBanner(player);
+            welcomeView.displayPlayerNameBanner(player);
 
             MainMenuView mainView = new MainMenuView();
             mainView.display();
 
         } catch (Throwable e) {
             e.printStackTrace();
-            
+
             System.out.println("Exception: " + e.toString()
                     + "\nCause: " + e.getCause()
                     + "\nMessage: " + e.getMessage());
