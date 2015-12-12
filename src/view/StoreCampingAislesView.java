@@ -31,7 +31,7 @@ public class StoreCampingAislesView extends View {
     
         switch(input) {
             case 'T':
-                enterTentsAsle();
+                enterTentAisle();
                 break;
             case 'L':
                 enterLightingAisle();
@@ -48,8 +48,10 @@ public class StoreCampingAislesView extends View {
         return true;
     }    
 
-    private void enterTentsAsle() {
-        System.out.println("NOT YET IMPLEMENTED");
+    private void enterTentAisle() {
+        System.out.println("Please select an item and quantity for purchase.");
+        
+        
     }
 
     private void enterLightingAisle() {
