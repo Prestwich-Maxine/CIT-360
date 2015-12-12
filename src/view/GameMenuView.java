@@ -6,6 +6,7 @@
 package view;
 
 import Exception.MapException;
+import control.DeliveryControl;
 import control.MapControl;
 import model.Game;
 import model.InventoryList;
@@ -21,8 +22,10 @@ import model.StoreAislesCamping;
 public class GameMenuView extends View {
 
     public GameMenuView() {
-        super("M - Map of town\n"
+        super("Game Menu:\n"
+                + "M - Map of town\n"
                 + "S - Show current location\n"
+                + "C - Complete list of items in game\n"
                 + "I - Inventory list\n"
                 + "L - Move to a new location\n"
                 + "D - View deliveries\n"
@@ -40,6 +43,8 @@ public class GameMenuView extends View {
             case 'M':
                 displayMap();
                 break;
+            case 'C':
+                showAllItems();
             case 'I':
                 inventoryList();
                 break;
@@ -131,13 +136,13 @@ public class GameMenuView extends View {
      * ****************************************************************************
      */
     private void moveToNewLocation() {
-        System.out.println("Every time you move location, 30 minutes will be duducted from your remaining time until the Hurricane.");
+        System.out.println("Every time you move location, 1 hour will be duducted from your remaining time until the Hurricane.");
         System.out.println("Please input coordinates (e.g.  3,4)");
         System.out.println("Location Quick List:");
-        System.out.println("House: 1,0");
-        System.out.println("Delivery Center: 1,1");
-        System.out.println("Mega Store: 4,4");
-        System.out.println("Camping Store: 0,3");
+        System.out.println("H = House: 1,0");
+        System.out.println("D = Delivery Center: 1,1");
+        System.out.println("M = Mega Store: 4,4");
+        System.out.println("C = Camping Store: 0,3");
 
         try {
             String input = keyboard.readLine();
@@ -162,7 +167,8 @@ public class GameMenuView extends View {
      * ****************************************************************************
      */
     private void viewDeliveries() {
-        System.out.println("NOT IMPLEMENTED YET");
+        DeliveryControl deliveryControl = new DeliveryControl();
+        deliveryControl.checkDeliveries(0);
     }
 
     /**
@@ -203,4 +209,8 @@ public class GameMenuView extends View {
 //        printCampingReport.display();
 
     }
+
+    private void showAllItems() {
+        
+        }
 }
