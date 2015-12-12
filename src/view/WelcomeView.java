@@ -26,13 +26,13 @@ public class WelcomeView {
         
         System.out.println("*********************************");
         System.out.println("The tropical storm in the news has just been upgraded to Hurricane Patty.");
-        System.out.println("It is expected to reach your city in 72 hours.");
-        System.out.println("you need to make sure you have enough food and supplies");
-        System.out.println("to survive the hurricane and it's after math.");
+        System.out.println("It is expected to reach your city in 3 days or 72 hours.");
+        System.out.println("You need to make sure you have enough food and supplies");
+        System.out.println("to survive the hurricane and its after math.");
         System.out.println("See what you have at home, and then proceed to the stores");
-        System.out.println("to purchase what you need.");
-        System.out.println("Remember, you are in a race against time. It will");
-        System.out.println("It will cost you half an hour of your time everytime you move location, so use your time wisely!");
+        System.out.println("to purchase what you need. Remember, you are in a race against");
+        System.out.println("time. It will cost you one hour each time you move locations,");
+        System.out.println("so use your time wisely!");
         System.out.println("Good luck!");
         System.out.println("************************************");
         
@@ -69,13 +69,5 @@ public class WelcomeView {
         System.out.println("Enjoy the Game!");
         System.out.println("************************************");
     }
-    
-    
-    public boolean doAction(char input) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    
-    
-    
+     
 }
