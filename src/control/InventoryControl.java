@@ -42,15 +42,16 @@ public class InventoryControl {
                     + "your account to purchase this item.");
         }
         if (quantity <0 || quantity > 5){
-            throw new InventoryControlException("Please enter a quantity between"
-                    + "one and five.");
+            throw new InventoryControlException("The quantity entered must be at\n"
+                    + "least one and no greater than 5\n"
+                    + "one and five.\n");
         }
         try {
         double totalItemCost = itemCost * quantity;
         budget = budget - totalItemCost;
         } catch (NumberFormatException nf) {
-            System.out.println("\nPlease check your quantity and budget. You may"
-                    + " have exceeded your budget. ");
+            System.out.println("\nPlease check your quantity and budget. You may\n"
+                    + "have exceeded your budget.\n");
         }
         return budget;       
     }
