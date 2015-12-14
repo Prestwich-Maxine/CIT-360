@@ -29,7 +29,7 @@ public class GameMenuView extends View {
                 + "C - Complete list of items in game\n"
                 + "I - Inventory list\n"
                 + "L - Move to a new location\n"
-                + "D - View deliveries\n"
+                + "D - Delivery Center Menu\n"
                 + "A - Money Accounts\n"
                 + "P - Survival Points Earned\n"
                 + "T - Time before hurricane\n"
@@ -53,7 +53,7 @@ public class GameMenuView extends View {
                 moveToNewLocation();
                 break;
             case 'D':
-                viewDeliveries();
+                showDeliveryCenterMenu();
                 break;
             case 'A':
                 showMoneyRemaining();
@@ -167,14 +167,6 @@ public class GameMenuView extends View {
     /**
      * ****************************************************************************
      */
-    private void viewDeliveries() {
-        DeliveryControl deliveryControl = new DeliveryControl();
-        deliveryControl.checkDeliveries(0);
-    }
-
-    /**
-     * ****************************************************************************
-     */
     private void showMoneyRemaining() {
         System.out.println("NOT IMPLEMENTED YET");
     }
@@ -198,13 +190,6 @@ public class GameMenuView extends View {
     /**
      * ****************************************************************************
      */
-    private void displayGameMenu() {
-
-    }
-
-    /**
-     * ****************************************************************************
-     */
     public void printCampingItemReport(StoreAislesCamping printCampingReport) {
 //        StoreAislesCamping printCampingReport = new StoreAislesCamping();
 //        printCampingReport.display();
@@ -215,5 +200,10 @@ public class GameMenuView extends View {
         
          
         
+        }
+
+    private void showDeliveryCenterMenu() {
+        DeliveryCenterView deliveryMenu = new DeliveryCenterView();
+        deliveryMenu.display();
         }
 }
