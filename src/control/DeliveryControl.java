@@ -17,16 +17,16 @@ public class DeliveryControl {
 
         for (int d = 10; d >= 0; d--) {
             int deliveries = d--;
-            
-           if (deliveries > 0) {
-               
-               System.out.println("You have this many deliveries available:"
-                       + deliveries);
-           } else
-               
-               System.out.println("Currently, there are no deliveries to make.");
+
+            if (deliveries > 0) {
+
+                System.out.println("You have this many deliveries available:"
+                        + deliveries);
+            } else {
+                System.out.println("Currently, there are no deliveries to make.");
+            }
         }
-        
+
     }
 
     public int calcNewTimeAfterDelivery(boolean makeDeliveries, int timeRemaining)
@@ -52,6 +52,5 @@ public class DeliveryControl {
 
         return deliveryTime;
     }
-    
 
 }
