@@ -15,6 +15,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import model.Game;
+import model.Item;
 import model.MainMap;
 import model.Player;
 import view.WelcomeView;
@@ -30,7 +31,7 @@ public class GameControl {
         Game.setInstance(null);
         Game game = Game.getInstance();
         Player player = new Player();
-        player.setTimeRemaining(60);
+        player.setTimeRemaining(72);
         player.setMoney(500);
         game.setNeededSurvivalPoints(800);
         game.setPlayer(player);
@@ -77,12 +78,114 @@ public class GameControl {
         }
     }
 
-    public static InventoryList[] createItemsCurrent() {
-        System.out.println("***Items the player currently has***");
-        //this.console.println(this.message);
+    public static Item[] createListOfAllItems() {
+        System.out.println("Food\n");
+        Item.BEANS.getItemDescription();
+        Item.BEANS.getItemCost();
+        Item.BEANS.getSurvivalPoints();
+        
+        Item.BREAD.getItemDescription();
+        Item.BREAD.getItemCost();
+        Item.BREAD.getSurvivalPoints();
+        
+        Item.CANDY.getItemDescription();
+        Item.CANDY.getItemCost();
+        Item.CANDY.getSurvivalPoints();
+        
+        Item.FRUIT.getItemDescription();
+        Item.FRUIT.getItemCost();
+        Item.FRUIT.getSurvivalPoints();
+        
+        Item.CANNED_MEAT.getItemDescription();
+        Item.CANNED_MEAT.getItemCost();
+        Item.CANNED_MEAT.getSurvivalPoints();
+        
+        Item.VEGETABLES.getItemDescription();
+        Item.VEGETABLES.getItemCost();
+        Item.VEGETABLES.getSurvivalPoints();
+        
+        Item.CHOCOLATE.getItemDescription();
+        Item.CHOCOLATE.getItemCost();
+        Item.CHOCOLATE.getSurvivalPoints();
+        
+        Item.COOKIES.getItemDescription();
+        Item.COOKIES.getItemCost();
+        Item.COOKIES.getSurvivalPoints();
+        
+        Item.CRACKERS.getItemDescription();
+        Item.CRACKERS.getItemCost();
+        Item.CRACKERS.getSurvivalPoints();
+        
+        Item.GRANOLA_BARS.getItemDescription();
+        Item.GRANOLA_BARS.getItemCost();
+        Item.GRANOLA_BARS.getSurvivalPoints();
+        
+        Item.PROTEIN_BAR.getItemDescription();
+        Item.PROTEIN_BAR.getItemCost();
+        Item.PROTEIN_BAR.getSurvivalPoints();
+        
+        Item.WATER.getItemDescription();
+        Item.WATER.getItemCost();
+        Item.WATER.getSurvivalPoints();
+        
+        System.out.println("Clothes:\n");
+        Item.JACKET.getItemDescription();
+        Item.JACKET.getItemCost();
+        Item.JACKET.getSurvivalPoints();
+        
+        Item.SHOES.getItemDescription();
+        Item.SHOES.getItemCost();
+        Item.SHOES.getSurvivalPoints();
+        
+        Item.SWEATSHIRT.getItemDescription();
+        Item.SWEATSHIRT.getItemCost();
+        Item.SWEATSHIRT.getSurvivalPoints();
+        
+        System.out.println("Surival/Camping:\n");
+        Item.TARP.getItemDescription();
+        Item.TARP.getItemCost();
+        Item.TARP.getSurvivalPoints();
+        
+        Item.TENT.getItemDescription();
+        Item.TENT.getItemCost();
+        Item.TENT.getSurvivalPoints();
+        
+        Item.CAMP_STOVE.getItemDescription();
+        Item.CAMP_STOVE.getItemCost();
+        Item.CAMP_STOVE.getSurvivalPoints();
+        
+        Item.FUEL.getItemDescription();
+        Item.FUEL.getItemCost();
+        Item.FUEL.getSurvivalPoints();
+        
+        System.out.println("Personal Care:\n");
+        Item.HYGIENE_KIT.getItemDescription();
+        Item.HYGIENE_KIT.getItemCost();
+        Item.HYGIENE_KIT.getSurvivalPoints();
+        
+        Item.MEDICINE.getItemDescription();
+        Item.MEDICINE.getItemCost();
+        Item.MEDICINE.getSurvivalPoints();
+        
+        Item.TOILET_PAPER.getItemDescription();
+        Item.TOILET_PAPER.getItemCost();
+        Item.TOILET_PAPER.getSurvivalPoints();
+                
+        
+        
+        
+        
+        
+               
+           
+        
         return null;
     }
+    public static InventoryList[] createItemsCurrent() {
+        
+        return null;
 
+    }
     public static InventoryList[] createItemsNeeded() {
         System.out.println("***Items the player still needs***");
         //this.console.println(this.message);
@@ -92,12 +195,6 @@ public class GameControl {
     public void initializeMap() {
 
     }
-}
-    // Come back and figure out list. Need to create in items.
-    /*public static Item[] createGameItemsList() {
- Item[] gameItemsList = new Item[50];
-        
- Item tuna = new Item();
- tuna.setDescription("Tuna");
     
- }*/
+}
+    
