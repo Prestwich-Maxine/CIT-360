@@ -35,12 +35,6 @@ public class GameControl {
         game.setNeededSurvivalPoints(800);
         game.setPlayer(player);
 
-        WelcomeView welcomeView = new WelcomeView();
-        welcomeView.displayBanner();
-
-        player.setName(welcomeView.getPlayerName());// set players name in player class
-
-        welcomeView.displayPlayerNameBanner(player);
         game.setPlayer(player);// save player in game
 
         MainMap map = new MainMap();
