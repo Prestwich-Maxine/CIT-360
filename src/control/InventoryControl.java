@@ -17,7 +17,7 @@ import model.Player;
 public class InventoryControl {
     
     // function for money earned
-    public Double calcAddMoneyEarned(Player p, Deliveries d)
+    public double calcAddMoneyEarned(Player p, Deliveries d)
             throws InventoryControlException{
             
             if (p.getMoney() < 0){
