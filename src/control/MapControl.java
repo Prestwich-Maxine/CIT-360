@@ -20,7 +20,7 @@ public class MapControl {
     // a set time deduction for everytime the player moves ( - 30 minutes)
     public void deductTime(Player p) {
 
-        int deduction = 30;
+        int deduction = 1;
         int newTimeRemaining = p.getTimeRemaining() - deduction;
 
         p.setTimeRemaining(newTimeRemaining);
