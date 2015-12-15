@@ -18,7 +18,7 @@ public enum Item implements Serializable{
     
     // ("name of item", SP, Cost, Category)
     //FOOD//
-    TUNA("Canned Tuna", 4, 5,"Food"),
+    TUNA("Tuna", 4, 5,"Food"),
     PROTEIN_BAR("Protein Bar", 5, 5, "Food"),
     BEANS("Beans", 3, 5, "Food"),
     WATER("Water", 10, 5, "Food"),
