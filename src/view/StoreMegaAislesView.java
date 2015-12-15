@@ -24,14 +24,9 @@ public class StoreMegaAislesView extends View {
     
     public StoreMegaAislesView() {
         super ("Store aisles:\n"
-                + "P - Protein\n"
-                + "S -  Sweets/Sugars\n" 
-                + "C - Carbohydrates\n"
-                + "T - Toiletries \n"
-                + "F - First aid and medicine\n" 
-                + "A - Clothing \n"
-                + "B - Blankets\n"
-                + "W - Water\n"
+                + "F - Food\n"
+                + "C - Clothes\n" 
+                + "P - Personal Care\n"
                 + "X - Game Menu");
     }
     
@@ -66,29 +61,14 @@ public class StoreMegaAislesView extends View {
     public boolean doAction(char input) {
         
         switch(input) {
-            case 'P':
-                enterProteinAisle();
-                break;
-            case 'S':
-                enterSweetsAisle();
+            case 'F':
+                enterFoodAisle();
                 break;
             case 'C':
-                enterCarbohydratesAisle();
+                enterClothesAisle();
                 break;
-            case 'T':
-                enterToiletriesAisle();
-                break;
-            case 'F':
-                enterFirstAidAisl();
-                break;
-            case 'A':
-                enterClothingAisle();
-                break;
-            case 'B':
-                enterBlanketsAisle();
-                break;
-            case 'W':
-                enterWaterAisle();
+            case 'P':
+                enterPersonalCareAisle();
                 break;
             case 'X':
                 return false;
@@ -97,37 +77,24 @@ public class StoreMegaAislesView extends View {
             }
         return true;
     }
+
+    private void enterFoodAisle() {
+        
+        FoodAisleView foodAisle = new FoodAisleView();
+        foodAisle.display();
+    }
+
+    private void enterClothesAisle() {
+        
+        ClothesAisleView clothesAisle = new ClothesAisleView();
+        clothesAisle.display();
+    }
+
+    private void enterPersonalCareAisle() {
+        PersonalCareAisleView personalCareAisle = new PersonalCareAisleView();
+        personalCareAisle.display();
+    }
     
     
-    private void enterProteinAisle() {
-        System.out.println("NOT YET IMPLEMENTED");
-    }
-
-    private void enterSweetsAisle() {
-       System.out.println("NOT YET IMPLEMENTED");
-    }
-
-    private void enterCarbohydratesAisle() {
-       System.out.println("NOT YET IMPLEMENTED");
-    }
-
-    private void enterToiletriesAisle() {
-       System.out.println("NOT YET IMPLEMENTED");
-    }
-
-    private void enterFirstAidAisl() {
-       System.out.println("NOT YET IMPLEMENTED");
-    }
     
-    private void enterClothingAisle() {
-       System.out.println("NOT YET IMPLEMENTED");
-    }
-
-    private void enterBlanketsAisle() {
-       System.out.println("NOT YET IMPLEMENTED");
-    }
-
-    private void enterWaterAisle() {
-        System.out.println("NOT YET IMPLEMENTED");
-    }
 }
