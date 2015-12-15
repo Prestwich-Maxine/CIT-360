@@ -34,6 +34,7 @@ public class GameMenuView extends View {
                 + "A - Money Accounts\n"
                 + "P - Survival Points Earned\n"
                 + "T - Time before hurricane\n"
+                + "R - Retail\n"
                 + "H - Help Menu\n"
                 + "X - Exit to Main Menu\n");
     }
@@ -73,6 +74,8 @@ public class GameMenuView extends View {
             case 'S':
                 showCurrentLocation();
                 break;
+            case 'R':
+                showStores();
             case 'X':
                 return false;
             default:
@@ -199,8 +202,8 @@ public class GameMenuView extends View {
     }
 
     private static void showAllItems() {
-        System.out.println("These are all the items available for purchase with their"
-                + "names, cost, and surival points.\n");
+        System.out.println("These are all the items available for purchase with\n"
+                + " their names, cost, and surival points.\n");
         
         GameControl allItemsList = new GameControl();
         Item[] allItems = GameControl.getAllItems();
@@ -210,5 +213,10 @@ public class GameMenuView extends View {
     private void showDeliveryCenterMenu() {
         DeliveryCenterView deliveryMenu = new DeliveryCenterView();
         deliveryMenu.display();
+    }
+
+    private void showStores() {
+        StoreView stores = new StoreView();
+        stores.display();
     }
 }
