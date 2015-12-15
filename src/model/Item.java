@@ -40,7 +40,7 @@ public enum Item implements Serializable{
     TENT("Tent", 15, 45, "Survival"),
     TARP("Tarp", 8, 10, "Survival"),
     FUEL("Fuel", 18, 10, "Survival"),
-    CAMP_STOVE("Tent", 22, 35, "Survival"),
+    CAMP_STOVE("Camp Stove", 22, 35, "Survival"),
   
     //PERSONAL CARE//
     HYGIENE_KIT("Hygiene Kit", 10, 30,"Personal Care"),
