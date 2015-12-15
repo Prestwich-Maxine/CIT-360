@@ -20,9 +20,10 @@ public class StoreCampingAislesView extends View {
     
     public StoreCampingAislesView() {
         super ("Camping Store Aisles:\n"
-                + "T - Tents and canopies\n"
-                + "L - Lighting\n"
-                + "C - Cooking supplies\n"
+                + "T - Tent\n"
+                + "A - Tarp\n"
+                + "F - Fuel\n"
+                + "C - Camp Stove\n"
                 + "X - Return to Game Menu");
     }
     
@@ -31,14 +32,16 @@ public class StoreCampingAislesView extends View {
     
         switch(input) {
             case 'T':
-                enterTentAisle();
+                System.out.println("You selected a tent for purchase.");
                 break;
-            case 'L':
-                enterLightingAisle();
+            case 'A':
+                System.out.println("You selected a tarp for purchase.");
+                break;
+            case 'F':
+                System.out.println("You selected fuel for purchase.");
                 break;
             case 'C':
-                enterCookingAisle();
-                break;
+                System.out.println("You selected a stove for purchase.");
             case 'X':
                 return false;
             default:
@@ -48,18 +51,6 @@ public class StoreCampingAislesView extends View {
         return true;
     }    
 
-    private void enterTentAisle() {
-        System.out.println("Please select an item and quantity for purchase.");
-        
-        
-    }
-
-    private void enterLightingAisle() {
-        System.out.println("NOT YET IMPLEMENTED");
-    }
-
-    private void enterCookingAisle() {
-        System.out.println("NOT YET IMPLEMENTED");
-    }
+    
 
    }
