@@ -18,17 +18,15 @@ public enum Item implements Serializable{
     
     // ("name of item", SP, Cost, Category)
     //FOOD//
-    CANNED_MEAT("Canned Meat", 4, 5,"Food"),
+    TUNA("Canned Tuna", 4, 5,"Food"),
     PROTEIN_BAR("Protein Bar", 5, 5, "Food"),
     BEANS("Beans", 3, 5, "Food"),
     WATER("Water", 10, 5, "Food"),
     BREAD("Bread", 5, 5, "Food"),
     CRACKERS("Crackers", 5, 5, "Food"),
     GRANOLA_BARS("Granola Bars", 10, 5, "Food"),
-    FRESH_VEGETABLES("Fresh Vegetables", 15, 10, "Food"),
-    FRESH_FRUIT("Fresh Fruit", 15, 10, "Food"),
-    CANNED_FRUIT("Canned Fruit", 5, 5, "Food"),
-    CANNED_VEGETABLES("Canned Vegetables", 4, 5, "Food"),
+    VEGETABLES("Vegetables", 15, 10, "Food"),
+    FRUIT("Fruit", 15, 10, "Food"),
     CHOCOLATE("Chocolate", 2, 5, "Food"),
     COOKIES("Cookies", 2, 5, "Food"),
     CANDY("Candy", 2, 5, "Food"),
@@ -54,12 +52,13 @@ public enum Item implements Serializable{
     private final int itemCost;        
     private final int survivalPoints;
     private final String categoryName;
-
-    Item(String item, int cost, int points, String category) {
-        this.itemDescription = item;
-        this.itemCost = cost;
-        this.survivalPoints = points;
-        this.categoryName = category;
+    public final int NUMBER_OF_ITEMS = 22;
+    
+    Item(String itemDescription, int itemCost, int survivalPoints, String categoryName) {
+        this.itemDescription = itemDescription;
+        this.itemCost = itemCost;
+        this.survivalPoints = survivalPoints;
+        this.categoryName = categoryName;
         
     }
 
@@ -81,6 +80,14 @@ public enum Item implements Serializable{
     ///////////////////////////////////
     //METHODS
     ///////////////////////////////////
+    
+    public void listItems() {
+    
+        for (Item products : Item.values()) {
+            System.out.println("products");
+        }
+    
+    }
     
     // We need to construct the item array with names, cost, associated survival
     //points and category
