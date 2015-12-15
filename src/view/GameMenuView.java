@@ -35,6 +35,7 @@ public class GameMenuView extends View {
                 + "P - Survival Points Earned\n"
                 + "T - Time before hurricane\n"
                 + "R - Retail\n"
+                + "B - House\n"
                 + "H - Help Menu\n"
                 + "X - Exit to Main Menu\n");
     }
@@ -76,6 +77,10 @@ public class GameMenuView extends View {
                 break;
             case 'R':
                 showStores();
+                break;
+            case 'B':
+                showHouse();
+                break;
             case 'X':
                 return false;
             default:
@@ -218,5 +223,10 @@ public class GameMenuView extends View {
     private void showStores() {
         StoreView stores = new StoreView();
         stores.display();
+    }
+
+    private void showHouse() {
+        HouseView house = new HouseView();
+        house.display();
     }
 }
