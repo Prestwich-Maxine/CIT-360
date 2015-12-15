@@ -23,7 +23,7 @@ public class StoreView extends View {
     public StoreView() {
         super("Select a store: \n"
                 + "M - Mega Store\n"
-                + "C - Camping Store"
+                + "C - Camping Store\n"
                 + "X - Return to Game Menu\n");
     }
     
