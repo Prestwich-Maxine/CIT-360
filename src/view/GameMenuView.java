@@ -7,6 +7,7 @@ package view;
 
 import Exception.MapException;
 import control.DeliveryControl;
+import control.GameControl;
 import control.MapControl;
 import model.Game;
 import model.InventoryList;
@@ -168,7 +169,8 @@ public class GameMenuView extends View {
      * ****************************************************************************
      */
     private void showMoneyRemaining() {
-        System.out.println("NOT IMPLEMENTED YET");
+        System.out.println("You begin the game with $500 to purchase items\n"
+                + "you need to prepare for the hurricane.\n");
     }
 
     /**
@@ -196,14 +198,17 @@ public class GameMenuView extends View {
 
     }
 
-    private void showAllItems() {
+    private static void showAllItems() {
+        System.out.println("These are all the items available for purchase with their"
+                + "names, cost, and surival points.\n");
         
-         
-        
-        }
+        GameControl allItemsList = new GameControl();
+        Item[] allItems = GameControl.getAllItems();
+
+    }
 
     private void showDeliveryCenterMenu() {
         DeliveryCenterView deliveryMenu = new DeliveryCenterView();
         deliveryMenu.display();
-        }
+    }
 }
