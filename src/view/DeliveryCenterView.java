@@ -45,10 +45,6 @@ public class DeliveryCenterView extends View {
 
     }
 
-    private void makeDelivery() {
-
-    }
-
     private void viewDeliveries() {
         DeliveryControl deliveryControl = new DeliveryControl();
         deliveryControl.checkDeliveries(10);
