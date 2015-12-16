@@ -186,7 +186,7 @@ public class GameMenuView extends View {
      */
     private void timeRemaining() {
         int t = Game.getInstance().getPlayer().getTimeRemaining();
-        System.out.println("You have " + t + " minutes remaining");
+        System.out.println("You have " + t + " hours remaining");
     }
 
     /**

@@ -7,7 +7,6 @@ package hurricane_game;
 
 import model.Player;
 import view.MainMenuView;
-import control.GameControl;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
