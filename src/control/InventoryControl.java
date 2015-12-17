@@ -25,7 +25,7 @@ public class InventoryControl {
                         + "0. Check the delivery center to earn money.");
             }
             
-            double newMoney = p.getMoney() + d.getDELIVERY_MONEY();
+            double newMoney = p.getMoney() + Deliveries.getDELIVERY_MONEY();
             p.setMoney(newMoney);
             
             return newMoney;
