@@ -17,7 +17,7 @@ import model.Player;
 public class InventoryControl {
     
     // function for money earned
-    public double calcAddMoneyEarned(Player p, Deliveries d)
+    public int calcAddMoneyEarned(Player p, Deliveries d)
             throws InventoryControlException{
             
             if (p.getMoney() < 0){
@@ -25,7 +25,7 @@ public class InventoryControl {
                         + "0. Check the delivery center to earn money.");
             }
             
-            double newMoney = p.getMoney() + Deliveries.getDELIVERY_MONEY();
+            int newMoney = p.getMoney() + Deliveries.getDELIVERY_MONEY();
             p.setMoney(newMoney);
             
             return newMoney;
@@ -33,7 +33,7 @@ public class InventoryControl {
     
     
     //function to calculate money spent
-    public double calcMoneySpent(double budget, double itemCost, String name, int quantity)
+    public int calcMoneySpent(int budget, int itemCost, String name, int quantity)
         throws InventoryControlException {
         
         
@@ -47,7 +47,7 @@ public class InventoryControl {
                     + "one and five.\n");
         }
         try {
-        double totalItemCost = itemCost * quantity;
+        int totalItemCost = itemCost * quantity;
         budget = budget - totalItemCost;
         } catch (NumberFormatException nf) {
             System.out.println("\nPlease check your quantity and budget. You may\n"
@@ -111,13 +111,13 @@ public class InventoryControl {
     public boolean purchaseItems(Player p, Item i, int quantity) {
         
         //Calculate total cost
-        double totalCost = quantity * i.getItemCost();
+        int totalCost = quantity * i.getItemCost();
         
         if(p.getMoney() < totalCost) {
             return false;
         }
         
-        double newMoney = p.getMoney() - totalCost;
+        int newMoney = p.getMoney() - totalCost;
         p.setMoney(newMoney);
         
         int count = 0;
