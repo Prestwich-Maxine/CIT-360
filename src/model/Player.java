@@ -18,7 +18,7 @@ public class Player implements Serializable{
     
     private String name;
     private List<Item> inventory;
-    private double money;
+    private int money;
     private List<Deliveries> deliveries;
     public String itemsCurrent [];
     public int timeRemaining;
@@ -64,11 +64,11 @@ public class Player implements Serializable{
         this.inventory = inventory;
     }
 
-    public double getMoney() {
+    public int getMoney() {
         return money;
     }
 
-    public void setMoney(double money) {
+    public void setMoney(int money) {
         this.money = money;
     }
     

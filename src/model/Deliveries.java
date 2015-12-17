@@ -16,7 +16,7 @@ public class Deliveries implements Serializable {
     
     // I set the money for every delivery to 10 dollars and the time to half an hour
     
-    public static final double DELIVERY_MONEY = 10.00;
+    public static final int DELIVERY_MONEY = 10;
     public static final double DELIVERY_TIME = 0.50;
 
     private String type;
@@ -26,7 +26,7 @@ public class Deliveries implements Serializable {
     public Deliveries() {
     }
 
-    public static double getDELIVERY_MONEY() {
+    public static int getDELIVERY_MONEY() {
         return DELIVERY_MONEY;
     }
 
