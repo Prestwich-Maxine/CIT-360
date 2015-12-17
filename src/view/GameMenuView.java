@@ -6,13 +6,10 @@
 package view;
 
 import Exception.MapException;
-import control.DeliveryControl;
 import control.GameControl;
 import control.MapControl;
 import model.Game;
-import model.InventoryList;
 import model.Location;
-import model.LocationName;
 import model.MainMap;
 import model.StoreAislesCamping;
 import model.Item;
@@ -165,6 +162,8 @@ public class GameMenuView extends View {
             MapControl mc = new MapControl();
 
             mc.movePlayer(Game.getInstance().getPlayer(), Game.getInstance().getMap(), row, col);
+            
+//            if()
 
         } catch (MapException me) {
             System.out.println(me.getMessage());

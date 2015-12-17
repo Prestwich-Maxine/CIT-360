@@ -10,6 +10,7 @@ import model.Game;
 import model.Location;
 import model.MainMap;
 import model.Player;
+import view.DeliveryCenterView;
 
 /**
  *
@@ -40,9 +41,14 @@ public class MapControl {
             throw new MapException("Cannot move to that col - it is outside of the city");
         }
         
+              
+       
+        
         Location currentLocation = p.getLocation();
         Location newLocation = m.getLocation(newRow, newCol);
         
+       
+       
         if(p.getTimeRemaining() <= 0) {
             System.out.println("You are out of TIME!"
                     + "The hurricane is about to hit and you will be move to the House to see if you survived the Hurricane.");
@@ -75,6 +81,26 @@ public class MapControl {
             deductTime(p);
 
             p.setLocation(newLocation);
+            
+              if(newRow == 4 && newCol == 4) {
+            //Do all the mega store stuff HERE!!!
+                  
+            }
+         
+            if(newRow == 1 && newCol == 1) {
+            //Do all the Delivery Center stuff HERE!!!
+                
+                System.out.println("You are now in the DELVIERY CENTER!!");
+
+                DeliveryCenterView deliveryMenu = new DeliveryCenterView();
+                deliveryMenu.display();
+            }
+           if(newRow == 0 && newCol == 3) {
+            //Do all the Camping store stuff HERE!!!
+            }
+            if(newRow == 1 && newCol == 0) {
+            //Do all the House stuff HERE!!!
+            }  
             
             return true;
         }
