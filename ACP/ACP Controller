@@ -1,0 +1,27 @@
+package apcontroller;
+
+import java.util.HashMap;
+
+public class APCController {
+	
+	public static HashMap<String, HandleOperation> hashMapOfOperation = new HashMap<String, HandleOperation>();
+
+	public  APCController() {
+
+	}
+		
+		public  void handleOperation(String operation, Integer firstNum, Integer secondNum) {
+			
+			hashMapOfOperation.put("+",  new Plus());
+			hashMapOfOperation.put("*", new Times());
+			hashMapOfOperation.put("/", new Division());
+			
+			HandleOperation doMath = hashMapOfOperation.get(operation);
+			
+			doMath.operate(firstNum, secondNum);
+			
+		}
+
+		
+	
+}
