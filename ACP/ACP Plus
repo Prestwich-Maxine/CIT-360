@@ -1,0 +1,11 @@
+package apcontroller;
+
+public class Plus implements HandleOperation{
+
+	public void operate(Integer firstNum, Integer secondNum) {
+		Integer addTotal = firstNum + secondNum;
+		System.out.println(addTotal);
+	}
+}
+
+
