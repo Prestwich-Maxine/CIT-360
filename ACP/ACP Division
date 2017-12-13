@@ -1,0 +1,13 @@
+package apcontroller;
+
+public class Division implements HandleOperation {
+
+		public void operate(Integer firstNum, Integer secondNum) {
+			Integer divide = firstNum/secondNum;
+			System.out.println(divide);
+		}
+
+		
+	}
+
+
