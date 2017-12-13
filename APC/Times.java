@@ -1,0 +1,9 @@
+package apcontroller;
+
+public class Times implements HandleOperation {
+
+	public void operate(Integer firstNum, Integer secondNum) {
+		Integer multiply = firstNum * secondNum;
+		System.out.println(multiply);
+	}
+}
